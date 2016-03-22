@@ -1,0 +1,31 @@
+{
+  "name": "hammock",
+  "description": "an online self-help study planner",
+  "main": "index.js",
+  "authors": [
+    "Emma",
+    "Ina",
+    "Marion",
+    "Mo"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/marion-lv/hammockapp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.2",
+    "angular-resource": "^1.5.2",
+    "angular-animate": "^1.5.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.2",
+    "angular-route": "^1.5.2"
+  }
+}
