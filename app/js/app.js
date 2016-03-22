@@ -15,8 +15,13 @@
 				templateUrl: 'index.html',
 				controller: 'IndexCtrl'
 			})
-		  .otherwise({
-        redirectTo: '/'
-      });
+			.when('/sign_in', {
+        templateUrl: '../../views/user_sessions/new.html',
+        controller: 'UserSessionsCtrl'
+      })
+      ;
+		  // .otherwise({
+    //     redirectTo: '/'
+    //   });
 	});
 }());

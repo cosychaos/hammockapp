@@ -5,8 +5,10 @@ describe('Hammock homepage', function() {
 
 	describe ('on page load', function(){
 
-		it('displays hello world', function(){
+		it('can sign a user in', function(){
 			expect($('h1').getText()).toBe('Hello World!');
+			$('#sign_in').click();
+			expect($('.form_group').isDisplayed()).toBe(true);
 		});
 	});
 });
