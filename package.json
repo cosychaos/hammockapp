@@ -4,7 +4,7 @@
   "description": "an online self-help study planner",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./app -a 0.0.0.0 -p 8000",
+    "start": "http-server ./app/ -a 0.0.0.0 -p 8000",
     "protractor": "protractor test/e2e/conf.js",
     "update-webdriver": "webdriver-manager update --standalone",
     "test": "karma start test/karma.conf.js"
