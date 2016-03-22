@@ -17,8 +17,8 @@
 </head>
 <body>
 	<p><h1>Hello World!</h1></p>
-	<li ng-show="!user.id"><a ng-href="/#/sign_in" id="sign_in">Sign in</a></li> 
-	<li ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li>
-	<div ng-view class="views/user_sessions/new.html"></div>
+	<li ng-show="!user.id"><a ng-href="/sign_in" id="sign_in">Sign in</a></li> 
+<!-- 	<li ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li> -->
+	<div ng-view></div>
 </body>
 </html>
