@@ -28,13 +28,14 @@ describe('Hammock homepage', function() {
 
 		it('returns an error if wrong credentials', function(){
 			$('#sign_in').click();
-			$('#email').sendKeys("dog@dog.com");
+			$('#email').sendKeys("email@email.com");
 			$('#password').sendKeys("1234");
 			$('#submit-login').submit();
 			browser.ignoreSynchronization = true;
 		  browser.waitForAngular();
 		  browser.sleep(5000);
 		  expect($('.alert').getText()).toBe("Invalid login credentials. Please try again.");
+		  expect(browser.getCurrentUrl()).toContain('sign_in');
 			expect($('#sign_out').isDisplayed()).toBe(false);
 		});
 	});
