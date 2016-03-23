@@ -1,4 +1,4 @@
-<form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+<form id="submit-login" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email"
@@ -17,7 +17,7 @@
            class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+  <button id="submit" type="submit" class="btn btn-primary btn-lg">Log in</button>
 
   <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
 </form>
