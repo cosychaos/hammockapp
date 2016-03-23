@@ -9,15 +9,15 @@
 			'ngRoute',
 			'ng-token-auth'
 			])
+
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'index.html',
-				controller: 'IndexCtrl'
+				templateUrl: 'blank.html'
 			})
 			.when('/sign_in', {
-        templateUrl: '../views/user_sessions/new.html',
-        controller: 'UserSessionsCtrl'
+        templateUrl: 'new.html'
+        // controller: 'UserSessionsCtrl'
       })
 		  .otherwise({
         redirectTo: '/'

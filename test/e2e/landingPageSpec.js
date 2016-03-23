@@ -8,7 +8,7 @@ describe('Hammock homepage', function() {
 		it('can sign a user in', function(){
 			expect($('h1').getText()).toBe('Hello World!');
 			$('#sign_in').click();
-			expect($('.form_group').isDisplayed()).toBe(true);
+			expect($('.form-group').isDisplayed()).toBe(true);
 		});
 	});
 });
