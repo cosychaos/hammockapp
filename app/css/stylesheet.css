@@ -1,0 +1,13 @@
+h1{
+	font-family: 'Amaranth', sans-serif;
+}
+
+#sign_in{
+	font-size: 20px;
+	padding-right: 10px;
+}
+
+#register{
+	font-size: 20px;
+	padding-left: 10px;
+}
