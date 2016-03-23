@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server ./app -a 0.0.0.0 -p 8000",
+    "all": "ttab npm run dbreset && ttab npm start && ttab webdriver-manager start && ttab npm run rails",
     "protractor": "protractor test/e2e/conf.js",
     "update-webdriver": "webdriver-manager update --standalone",
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start test/karma.conf.js",
+    "rails": "cd ../hammockapp_api/hammock && rails s",
+    "dbreset": "cd ../hammockapp_api/hammock && rake db:reset"
   },
   "repository": {
     "type": "git",
