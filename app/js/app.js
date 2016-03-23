@@ -30,5 +30,12 @@
 		$authProvider.configure({
 			apiUrl: 'http://localhost:3000'
 		})
+	}])
+
+	.run(['$rootScope', '$location', function($rootScope, $location) {
+ 		$rootScope.$on('auth:login-success', function() {
+    	$location.path('/');
+  	});
 	}]);
+
 }());

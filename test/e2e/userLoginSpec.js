@@ -22,6 +22,7 @@ describe('Hammock homepage', function() {
 			browser.ignoreSynchronization = true;
 		  browser.waitForAngular();
 		  browser.sleep(5000);
+		  expect(browser.getCurrentUrl()).not.toContain('sign_in');
 			expect($('#sign_out').isDisplayed()).toBe(true);
 		});
 
