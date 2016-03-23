@@ -12,7 +12,7 @@ describe('Hammock homepage', function() {
 		
 		it ('can register a user', function(){
 			$('#register').click();
-			$('#email').sendKeys("cats@dogs.com");
+			$('#email').sendKeys("cats@coffee.com");
 			$('#password').sendKeys("password");
 			$('#password_confirmation').sendKeys("password");
 			$('#submit-registration').submit();
@@ -25,7 +25,7 @@ describe('Hammock homepage', function() {
 
 		it ('returns an error if registration fails', function(){
 			$('#register').click();
-			$('#email').sendKeys("cats@dogs.com");
+			$('#email').sendKeys("cats@coffee.com");
 			$('#password').sendKeys("password");
 			$('#password_confirmation').sendKeys("password");
 			$('#submit-registration').submit();
