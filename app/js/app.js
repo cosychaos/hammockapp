@@ -20,6 +20,11 @@
         controller: 'UserSessionsCtrl',
         controllerAs: 'userSessionsCtrl'
       })
+      .when('/register', {
+        templateUrl: 'views/user_registrations/new.html',
+        controller: 'UserRegistrationsCtrl',
+        controllerAs: 'userRegistrationsCtrl'
+      })
 		  .otherwise({
         redirectTo: '/'
       });

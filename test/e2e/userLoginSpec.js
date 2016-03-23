@@ -11,10 +11,10 @@ describe('Hammock homepage', function() {
 
 		it('displays login form', function(){
 			$('#sign_in').click();
-			expect($('.form-group').isDisplayed()).toBe(true);
+			expect($('#submit-login').isDisplayed()).toBe(true);
 		});
 
-		it('can fill in user information', function(){
+		it('can sign in a registered user', function(){
 			$('#sign_in').click();
 			$('#email').sendKeys("email@email.com");
 			$('#password').sendKeys("password");

@@ -1,4 +1,4 @@
-<form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
+<form id="submit-registration" ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email"
@@ -30,4 +30,7 @@
   </div>
 
   <button type="submit" class="btn btn-primary btn-lg">Register</button>
+
+  
+  <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
 </form>
