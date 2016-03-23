@@ -24,5 +24,11 @@
         redirectTo: '/'
       });
     // $locationProvider.html5Mode(true);
+	}])
+
+	.config(['$authProvider', function($authProvider){
+		$authProvider.configure({
+			apiUrl: 'http://localhost:3000'
+		})
 	}]);
 }());

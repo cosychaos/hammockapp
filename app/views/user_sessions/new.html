@@ -5,7 +5,6 @@
            name="email"
            id="email"
            ng-model="loginForm.email"
-           required="required"
            class="form-control">
   </div>
 
@@ -15,9 +14,10 @@
            name="password"
            id="password"
            ng-model="loginForm.password"
-           required="required"
            class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+  <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+
+  <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
 </form>
