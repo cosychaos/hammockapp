@@ -1,5 +1,6 @@
 'use strict';
 
-angular.module('Hammock')
-  .controller('UserSessionsCtrl', ['$scope', function ($scope) {
+angular
+	.module('Hammock')
+  .controller('UserSessionsCtrl', [function () {
   }]);

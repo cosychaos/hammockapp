@@ -13,11 +13,12 @@
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'blank.html'
+				templateUrl: 'views/main.html'
 			})
 			.when('/sign_in', {
-        templateUrl: 'new.html'
-        // controller: 'UserSessionsCtrl'
+        templateUrl: 'views/user_sessions/new.html',
+        controller: 'UserSessionsCtrl',
+        controllerAs: 'userSessionsCtrl'
       })
 		  .otherwise({
         redirectTo: '/'

@@ -4,6 +4,7 @@
   <meta charset='utf-8'>
 	<title>Hammock</title>
 	<link rel="stylesheet" type="text/css" href='bower_components/bootstrap/dist/css/bootstrap.css'>
+	<link rel="stylesheet" type="text/css" href='css/stylesheet.css'>
 	<script src='bower_components/angular/angular.js'></script>
   <script src='bower_components/angular-resource/angular-resource.js'></script>
   <script src='bower_components/angular-route/angular-route.js'></script>
@@ -15,11 +16,11 @@
   <script src="js/controllers/user_sessions.js"></script>
 </head>
 <body ng-app="Hammock">
-	<div>
-		<p><h1>Hello World!</h1></p>
-		<li ng-show="!user.id"><a href="/#/sign_in" id="sign_in">Sign in</a></li> 
-	<!-- 	<li ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li> -->
-		<div ng-view></div>
+  <div class="container-fluid">
+    <div class= "text-center col-md-4 col-md-offset-4"> 
+			<p><h1>Hammock</h1></p>
+			<div ng-view></div>
+		</div>
 	</div>
 </body>
 </html>

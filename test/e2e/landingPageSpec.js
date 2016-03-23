@@ -6,7 +6,7 @@ describe('Hammock homepage', function() {
 	describe ('on page load', function(){
 
 		it('can sign a user in', function(){
-			expect($('h1').getText()).toBe('Hello World!');
+			expect($('h1').getText()).toBe('Hammock');
 			$('#sign_in').click();
 			expect($('.form-group').isDisplayed()).toBe(true);
 		});
