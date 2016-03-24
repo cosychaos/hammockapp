@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -19,6 +19,10 @@ module.exports = function(config) {
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/angular-cookies/angular-cookies.js',
+      'app/bower_components/angular-cookie/angular-cookie.js',
+      'app/bower_components/ng-token-auth/dist/ng-token-auth.js',
       'app/js/**/*.js',
       'test/**/*.spec.js'
     ],
