@@ -20,6 +20,4 @@ describe('UserCoursesCtrl', function(){
 	// 	"organisation": "MIT"
 	// }
 
-
-
 });

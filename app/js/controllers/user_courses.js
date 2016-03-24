@@ -1,6 +1,7 @@
-angular
-	.module('Hammock')
+'use strict';
+
+angular.module('Hammock')
   .controller('UserCoursesCtrl', function() {
   	var self = this;
-  	self.courses = {};
+  	self.courses = [];
  });
