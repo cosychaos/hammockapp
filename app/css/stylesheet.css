@@ -1,13 +1,64 @@
-h1{
+body {
+  background-image: url('../assets/background-image.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+h1, #logo-text{
 	font-family: 'Amaranth', sans-serif;
 }
 
+h1 {
+  font-size: 70px;
+  opacity: 1;
+}
+
+#sign_in, #register {
+  color: #1cca97;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#sign_in:hover, #register:hover{
+  color: #00976b;
+}
+#logo-text{
+  font-size: 40px;
+  text-decoration: none;
+  color: #333;
+  margin-left: 5px;
+}
+
 #sign_in{
-	font-size: 20px;
-	padding-right: 10px;
+	font-size: 30px;
+	margin-left:30px;
 }
 
 #register{
-	font-size: 20px;
-	padding-left: 10px;
+	font-size: 30px;
+	margin-left: 30px;
+}
+
+#logo-small{
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.navbar-item {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.container-box {
+  margin-top: 20%;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius:10px;
+  padding-bottom: 40px;
+}
+
+.buttons {
+  margin-top: 30%;
+  text-align: center;
 }
