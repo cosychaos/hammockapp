@@ -25,6 +25,11 @@
         controller: 'UserRegistrationsCtrl',
         controllerAs: 'userRegistrationsCtrl'
       })
+      // .when('/mycourses', {
+      //   templateUrl: 'views/user_registrations/new.html',
+      //   controller: 'UserRegistrationsCtrl',
+      //   controllerAs: 'userRegistrationsCtrl'
+      // })
 		  .otherwise({
         redirectTo: '/'
       });
