@@ -51,10 +51,9 @@ h1 {
 }
 
 .container-box {
-  margin-top: 20%;
-  background-color: #fff;
+  margin-top: 10%;
   width: 50%;
-  opacity: .8;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius:10px;
   padding-bottom: 40px;
 }
