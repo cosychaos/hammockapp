@@ -1,8 +1,7 @@
 describe('UserCoursesCtrl', function(){
 	var ctrl;
 
-	beforeEach(function() {module('Hammock')}
-		);
+	beforeEach(function() {module('Hammock')});
 
   beforeEach(function() {
   	inject(function($controller){
@@ -14,10 +13,18 @@ describe('UserCoursesCtrl', function(){
 		expect(ctrl.courses.length).toEqual(0);
 	});
 
-	// var course1 = {
-	// 	"name": "The joy of physics",
-	// 	"provider": "Coursera",
-	// 	"organisation": "MIT"
-	// }
+  it("returns courses", function(){
+		expect(ctrl.viewCourses()).toEqual(courses);
+	});
 
+	var courses = [{
+		"name": "The joy of physics",
+		"provider": "Coursera"
+		},{
+		"name": "The joy of math",
+		"provider": "Udacity"
+		},{
+		"name": "The joy of programming",
+		"provider": "Coursera"
+		}];
 });
