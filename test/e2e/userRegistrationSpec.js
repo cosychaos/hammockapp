@@ -12,7 +12,7 @@ describe('Hammock homepage', function() {
 		
 		it ('can register a user', function(){
 			$('#register').click();
-			$('#email').sendKeys("cats@dogs.com");
+			$('#email').sendKeys("example@new.com");
 			$('#password').sendKeys("password");
 			$('#password_confirmation').sendKeys("password");
 			$('#submit-registration').submit();
@@ -21,13 +21,14 @@ describe('Hammock homepage', function() {
 		  browser.sleep(5000);
 		  expect(browser.getCurrentUrl()).not.toContain('register');
 			expect($('#sign_out').isDisplayed()).toBe(true);
+			$('#sign_out').click();
 		});
 
 		it ('returns an error if registration fails', function(){
 			$('#register').click();
-			$('#email').sendKeys("cats@dogs.com");
-			$('#password').sendKeys("password");
-			$('#password_confirmation').sendKeys("password");
+			$('#email').sendKeys("example@new.com");
+			$('#password').sendKeys("1234");
+			$('#password_confirmation').sendKeys("1234");
 			$('#submit-registration').submit();
 			browser.ignoreSynchronization = true;
 		  browser.waitForAngular();
