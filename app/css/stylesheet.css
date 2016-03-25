@@ -1,10 +1,3 @@
-body {
-  background-image: url('../assets/background-image.jpg');
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-
 h1, #logo-text{
 	font-family: 'Amaranth', sans-serif;
 }
@@ -12,6 +5,20 @@ h1, #logo-text{
 h1 {
   font-size: 70px;
   opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+.navbar {
+  margin-bottom: 0;
+}
+
+#background {
+  background-image: url('../assets/background-image.jpg');
+  background-size: cover;
+  width: 100%;
+  height:100vh;
 }
 
 #sign_in, #register {
@@ -37,7 +44,7 @@ h1 {
 
 #sign_in{
 	font-size: 30px;
-	margin-left:30px;
+	margin-left:20px;
 }
 
 #register{
@@ -56,14 +63,13 @@ h1 {
 }
 
 .container-box {
-  margin-top: 20%;
-  width: 50%;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius:10px;
-  padding-bottom: 40px;
+  margin-top: 20%;
+  padding-bottom: 30px;
 }
 
 .buttons {
-  margin-top: 30%;
+  margin-top: 5%;
   text-align: center;
 }
