@@ -6,14 +6,14 @@
     .service('UserCoursesService', function($http, $q) {
 
       var self = this;
-      var apiEndPoint = 'http://localhost3000/courses';
+      var apiEndPoint = 'http://localhost:3000/courses';
 
       self.getMyCourses = function(){
         return $http({
           url: apiEndPoint,
           method: 'GET'
         }).then(function(response){
-          return response.data.courses;
+          return response.data;
         });
       };
 

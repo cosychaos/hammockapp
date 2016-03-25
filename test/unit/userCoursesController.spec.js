@@ -8,8 +8,8 @@ describe('UserCoursesCtrl', function(){
 	});
 
   beforeEach(function() {
-  	inject(function($controller, $rootScope){
-			MockUserCoursesService.getMyCourses.and.returnValue(courses);
+  	inject(function($controller, $rootScope, $q){
+			MockUserCoursesService.getMyCourses.and.returnValue($q.when(courses));
     	ctrl = $controller('UserCoursesCtrl');
 			scope = $rootScope;
     });

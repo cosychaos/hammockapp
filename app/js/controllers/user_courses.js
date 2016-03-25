@@ -12,15 +12,15 @@ angular
     var requestCourses = UserCoursesService.getMyCourses();
 
     var sortCourses = function(courses){
-      courses.forEach(function(course){
-        if (course.status === "interested"){
-          self.interestingCourses.push(course);
-        } else if (course.status === "in progress"){
-          self.currentCourses.push(course);
-        } else if (course.status === "complete") {
-          self.completedCourses.push(course);
+      for (var i = 0; i < courses.length; i++) {
+        if (courses[i].status === "interested"){
+          self.interestingCourses.push(courses[i]);
+        } else if (courses[i].status === "in progress"){
+          self.currentCourses.push(courses[i]);
+        } else if (courses[i].status === "complete") {
+          self.completedCourses.push(courses[i]);
         }
-      });
+      }
     };
 
     var resetCourses = function(){
@@ -31,7 +31,9 @@ angular
 
     self.viewCourses = function() {
       resetCourses();
-      sortCourses(requestCourses);
+      requestCourses.then(function(courses){
+        sortCourses(courses);
+      });
     };
 
     self.viewCourses();

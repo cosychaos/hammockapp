@@ -11,7 +11,7 @@ describe ('userCoursesService', function(){
 
     beforeEach(inject(function($httpBackend) {
       httpBackend = $httpBackend;
-      httpBackend.expectGET("http://localhost3000/courses").respond({ "courses": courses });
+      httpBackend.expectGET("http://localhost:3000/courses").respond(courses);
       httpBackend.expectGET("views/main.html").respond("fine");
     }));
 
@@ -30,7 +30,7 @@ describe ('userCoursesService', function(){
 
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
-      httpBackend.expectPOST("http://localhost3000/courses").respond(course);
+      httpBackend.expectPOST("http://localhost:3000/courses").respond(course);
       httpBackend.expectGET("views/main.html").respond("fine");
     }));
 
@@ -48,7 +48,7 @@ describe ('userCoursesService', function(){
 
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
-      httpBackend.expectPATCH("http://localhost3000/courses/1").respond(updatedCourse);
+      httpBackend.expectPATCH("http://localhost:3000/courses/1").respond(updatedCourse);
       httpBackend.expectGET("views/main.html").respond("fine");
     }));
 
