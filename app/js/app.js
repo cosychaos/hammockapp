@@ -25,11 +25,11 @@
         controller: 'UserRegistrationsCtrl',
         controllerAs: 'userRegistrationsCtrl'
       })
-      // .when('/mycourses', {
-      //   templateUrl: 'views/user_registrations/new.html',
-      //   controller: 'UserRegistrationsCtrl',
-      //   controllerAs: 'userRegistrationsCtrl'
-      // })
+      .when('/mycourses', {
+        templateUrl: 'views/user_sessions/my_courses.html',
+        controller: 'UserCoursesCtrl',
+        controllerAs: 'userCoursesCtrl'
+      })
 		  .otherwise({
         redirectTo: '/'
       });
@@ -44,7 +44,7 @@
 
 	.run(['$rootScope', '$location', function($rootScope, $location) {
  		$rootScope.$on('auth:login-success', function() {
-    	$location.path('/');
+    	$location.path('/mycourses');
   	});
 	}]);
 

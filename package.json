@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/marion-lv/hammockapp#readme",
   "dependencies": {
-    "bower": "^1.7.7"
+    "bower": "^1.7.7",
+    "ttab": "^0.2.1"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",

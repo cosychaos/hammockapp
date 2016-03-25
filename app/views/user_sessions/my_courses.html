@@ -1,0 +1,8 @@
+<h2>My Courses</h2>
+<ul>
+	<li class="course" ng-repeat="(key,value) in userCoursesCtrl.viewCourses()">
+		<div class="course-name">{{value["name"]}}</div>
+		<div class="course-provider">{{value["provider"]}}</div>
+	</li>
+</ul>
+
