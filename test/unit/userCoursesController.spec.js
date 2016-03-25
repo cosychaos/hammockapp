@@ -1,35 +1,45 @@
 describe('UserCoursesCtrl', function(){
-	var ctrl;
 
-	beforeEach(function() {module('Hammock')});
+	var ctrl, MockUserCoursesService, scope;
+
+	beforeEach (function(){
+		MockUserCoursesService = jasmine.createSpyObj('UserCoursesService', ['getMyCourses', 'addToMyCourses', 'updateCourses']);
+		module('Hammock', {UserCoursesService: MockUserCoursesService});
+	});
 
   beforeEach(function() {
-  	inject(function($controller){
+  	inject(function($controller, $rootScope){
+			MockUserCoursesService.getMyCourses.and.returnValue(courses);
     	ctrl = $controller('UserCoursesCtrl');
+			scope = $rootScope;
     });
   });
 
-  it("initializes with empty courses", function(){
-		expect(ctrl.interested_courses.length).toEqual(0);
-	});
+	describe ('viewCourses', function(){
 
-  xit("returns courses", function(){
-		expect(ctrl.viewCourses()).toEqual(courses);
-	});
+		beforeEach(inject(function($httpBackend){
+			httpBackend = $httpBackend;
+			httpBackend.expectGET("views/main.html").respond("fine");
+		}));
 
-	it ("sorts courses into different categories depending on the status of the course", function(){
-		ctrl.viewCourses();
-		expect(ctrl.interested_courses.length).toBe(1);
-	});
+		it ("sorts courses into different categories depending on the status of the course", function(){
+			ctrl.viewCourses();
+			scope.$apply();
+			expect(ctrl.interestingCourses.length).toBe(1);
+		});
 
-	it ("sorts courses into different categories depending on the status of the course", function(){
-		ctrl.viewCourses();
-		expect(ctrl.current_courses.length).toBe(1);
-	});
+		it ("sorts courses into different categories depending on the status of the course", function(){
+			ctrl.viewCourses();
+			scope.$apply();
+			expect(ctrl.currentCourses.length).toBe(1);
+		});
 
-	it ("sorts courses into different categories depending on the status of the course", function(){
-		ctrl.viewCourses();
-		expect(ctrl.completed_courses.length).toBe(1);
+		it ("sorts courses into different categories depending on the status of the course", function(){
+			ctrl.viewCourses();
+			scope.$apply();
+			expect(ctrl.completedCourses.length).toBe(1);
+		});
+
 	});
 
 

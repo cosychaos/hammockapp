@@ -1,18 +1,15 @@
 'use strict';
 
-angular.module('Hammock')
-  .controller('UserCoursesCtrl', function() {
+angular
+  .module('Hammock')
+  .controller('UserCoursesCtrl', ['UserCoursesService', function(UserCoursesService) {
   	var self = this;
 
     self.interestingCourses = [];
     self.currentCourses = [];
     self.completedCourses = [];
 
-  	self.requestCourses = {"courses": courses};
-
-  	self.viewCourses = function() {
-      sortCourses(self.requestCourses.courses);
-    };
+    var requestCourses = UserCoursesService.getMyCourses();
 
     var sortCourses = function(courses){
       courses.forEach(function(course){
@@ -26,9 +23,24 @@ angular.module('Hammock')
       });
     };
 
-  self.viewCourses();
+    var resetCourses = function(){
+      self.interestingCourses = [];
+      self.currentCourses = [];
+      self.completedCourses = [];
+    };
 
- });
+    self.viewCourses = function() {
+      resetCourses();
+      sortCourses(requestCourses);
+    };
+
+    self.viewCourses();
+
+
+
+
+
+}]);
 
 
 
