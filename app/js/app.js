@@ -1,9 +1,9 @@
 (function(){
 	'use strict';
 
-	angular 
+	angular
 		.module('Hammock', [
-			'ngResource', 
+			'ngResource',
 			'ngAnimate',
 			'ngCookies',
 			'ngRoute',
@@ -26,7 +26,7 @@
         controllerAs: 'userRegistrationsCtrl'
       })
       .when('/mycourses', {
-        templateUrl: 'views/user_sessions/my_courses.html',
+        templateUrl: 'views/user_courses/my_courses.html',
         controller: 'UserCoursesCtrl',
         controllerAs: 'userCoursesCtrl'
       })

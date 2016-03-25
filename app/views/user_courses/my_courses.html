@@ -1,0 +1,34 @@
+<h2>My Courses</h2>
+<!-- <ul>
+	<li class="course" ng-repeat="(key,value) in userCoursesCtrl.viewCourses()">
+		<div class="course-name">{{value["name"]}}</div>
+		<div class="course-provider">{{value["provider"]}}</div>
+	</li>
+</ul> -->
+
+<div id="interested" class="col-md-4">Interesting Courses
+	<ul>
+		<li class="interesting" ng-repeat="course in userCoursesCtrl.interestingCourses">
+			<div class="course-name">Title: {{course.name}}</div>
+			<div class="course-provider">Organisation: {{course.provider}}</div>
+		</li>
+	</ul>
+</div>
+
+<div id="current" class="col-md-4">Current Courses
+	<ul>
+		<li class="current" ng-repeat="course in userCoursesCtrl.currentCourses">
+			<div class="course-name">Title: {{course.name}}</div>
+			<div class="course-provider">Organisation: {{course.provider}}</div>
+		</li>
+	</ul>
+</div>
+
+<div id="completed" class="col-md-4">Completed Courses
+	<ul>
+		<li class="completed" ng-repeat="course in userCoursesCtrl.completedCourses">
+			<div class="course-name">Title: {{course.name}}</div>
+			<div class="course-provider">Organisation: {{course.provider}}</div>
+		</li>
+	</ul>
+</div>

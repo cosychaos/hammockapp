@@ -4,9 +4,9 @@ angular.module('Hammock')
   .controller('UserCoursesCtrl', function() {
   	var self = this;
 
-    self.interested_courses = [];
-    self.current_courses = [];
-    self.completed_courses = [];
+    self.interestingCourses = [];
+    self.currentCourses = [];
+    self.completedCourses = [];
 
   	self.requestCourses = {"courses": courses};
 
@@ -17,16 +17,16 @@ angular.module('Hammock')
     var sortCourses = function(courses){
       courses.forEach(function(course){
         if (course.status === "interested"){
-          self.interested_courses.push(course);
+          self.interestingCourses.push(course);
         } else if (course.status === "in progress"){
-          self.current_courses.push(course);
+          self.currentCourses.push(course);
         } else if (course.status === "complete") {
-          self.completed_courses.push(course);
+          self.completedCourses.push(course);
         }
       });
     };
 
-
+  self.viewCourses();
 
  });
 
@@ -37,13 +37,16 @@ angular.module('Hammock')
  var courses = [{
    "name": "The joy of physics",
    "provider": "Coursera",
-   "status": "interested"
+   "status": "interested",
+   "id": "1"
    },{
    "name": "The joy of maths",
    "provider": "Udacity",
-   "status": "in progress"
+   "status": "in progress",
+   "id": "2"
    },{
    "name": "The joy of programming",
    "provider": "Coursera",
-   "status": "complete"
+   "status": "complete",
+   "id": "3"
    }];

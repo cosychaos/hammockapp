@@ -9,7 +9,7 @@ xdescribe('Hammock homepage', function() {
 			$('#register').click();
 			expect($('#submit-registration').isDisplayed()).toBe(true);
 		});
-		
+
 		it ('can register a user', function(){
 			$('#register').click();
 			$('#email').sendKeys("example@new.com");
