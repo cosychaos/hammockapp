@@ -18,7 +18,7 @@
       };
 
       self.addToMyCourses = function(course){
-        var data = JSON.stringify(course);
+        var data = JSON.stringify({"course": course});
         return $http({
           url: apiEndPoint,
           method: 'POST',
