@@ -23,19 +23,16 @@ describe('UserCoursesCtrl', function(){
 		}));
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
-			ctrl.viewCourses();
 			scope.$apply();
 			expect(ctrl.interestingCourses.length).toBe(1);
 		});
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
-			ctrl.viewCourses();
 			scope.$apply();
 			expect(ctrl.currentCourses.length).toBe(1);
 		});
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
-			ctrl.viewCourses();
 			scope.$apply();
 			expect(ctrl.completedCourses.length).toBe(1);
 		});
