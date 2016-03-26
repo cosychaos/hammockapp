@@ -17,11 +17,12 @@
   <script src="js/controllers/user_sessions.js"></script>
   <script src="js/controllers/user_registrations.js"></script>
   <script src="js/controllers/user_courses.js"></script>
+  <script src="js/controllers/search.js"></script>
 </head>
 <body ng-app="Hammock">
   <nav class="navbar navbar-default">
     <img id="logo-small" class="navbar-item" src="assets/logo.png" alt="Hammock Logo" style="width:40px;height:40px;">
-    <a href="#" id="logo-text" class="navbar-item">Hammock</a>
+    <a href="#/" id="logo-text" class="navbar-item">Hammock</a>
     <li id="sign_out" class="navbar-item" ng-show="user.id"><a ng-click='signOut()'>Sign out</a></li>
   </nav>
 	<div ng-view></div>
