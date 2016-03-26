@@ -12,10 +12,14 @@ describe('Search', function(){
   });
 
   describe("User", function() {
-    it ("can search for courses", function(){
+    it ("can search for courses and see correct results", function(){
       $('#add-courses').click();
       expect($('#search').isDisplayed()).toBeTruthy();
       expect($('#search-button').isDisplayed()).toBeTruthy();
+      $('#search').sendKeys('maths');
+      $('#search-button').click();
+      expect($('#result').getText()).toContain('The joy of maths');
+      expect($('#result').getText()).not.toContain('The joy of physics');
     });
   });
 });

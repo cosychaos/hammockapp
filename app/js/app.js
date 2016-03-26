@@ -33,7 +33,7 @@
       .when('/search', {
         templateUrl: 'views/search/search.html',
         controller: 'SearchCtrl',
-        controllerAs: 'searchCtrl'
+        controllerAs: 'search'
       })
 		  .otherwise({
         redirectTo: '/'
