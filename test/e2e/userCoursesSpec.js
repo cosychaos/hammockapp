@@ -13,7 +13,7 @@ describe('User course page', function() {
 
 	describe("User courses", function() {
 		it ("says my courses", function(){
-			expect($('my-courses').getText()).toBe("My Courses");
+			expect($('#my-courses').getText()).toBe("My Courses");
 			var courses = element.all(by.css('.course'));
 			var firstCourse = courses.first();
 		});

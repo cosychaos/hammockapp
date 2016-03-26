@@ -6,32 +6,38 @@
 	<div class="row">
 		<div id="interested" class="col-xs-12 col-md-4 text-center">
 			<h3>Interesting Courses</h3>
-			<ul>
-				<li class="interesting" ng-repeat="course in userCoursesCtrl.interestingCourses">
-					<div class="course-name">Title: {{course.name}}</div>
-					<div class="course-provider">Organisation: {{course.provider}}</div>
-				</li>
-			</ul>
-		</div>
+				<ul>
+					<li class="interesting" ng-repeat="course in userCoursesCtrl.courses[0]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+						<div class="update-course">
+							 <button id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})">Start Course</button>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-		<div id="current" class="col-xs-12 col-md-4 text-center">
-			<h3>Current Courses</h3>
-			<ul>
-				<li class="current" ng-repeat="course in userCoursesCtrl.currentCourses">
-					<div class="course-name">Title: {{course.name}}</div>
-					<div class="course-provider">Organisation: {{course.provider}}</div>
-				</li>
-			</ul>
-		</div>
+			<div id="current" class="col-xs-12 col-md-4 text-center">
+				<h3>Current Courses</h3>
+				<ul>
+					<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+						<div class="update-course">
+							 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-		<div id="completed" class="col-xs-12 col-md-4 text-center">
+			<div id="completed" class="col-xs-12 col-md-4 text-center">
 			<h3>Completed Courses</h3>
-			<ul>
-				<li class="completed" ng-repeat="course in userCoursesCtrl.completedCourses">
-					<div class="course-name">Title: {{course.name}}</div>
-					<div class="course-provider">Organisation: {{course.provider}}</div>
-				</li>
-			</ul>
+				<ul>
+					<li class="completed" ng-repeat="course in userCoursesCtrl.courses[2]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+					</li>
+				</ul>
 		</div>
 	</div>
 </div>

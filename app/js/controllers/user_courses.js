@@ -1,52 +1,44 @@
 'use strict';
 
-angular.module('Hammock')
-  .controller('UserCoursesCtrl', function() {
+angular
+  .module('Hammock')
+  .controller('UserCoursesCtrl', ['UserCoursesService', function(UserCoursesService) {
   	var self = this;
 
-    self.interestingCourses = [];
-    self.currentCourses = [];
-    self.completedCourses = [];
+    self.courses = [[],[],[]];
 
-  	self.requestCourses = {"courses": courses};
-
-  	self.viewCourses = function() {
-      sortCourses(self.requestCourses.courses);
-    };
-
-    var sortCourses = function(courses){
-      courses.forEach(function(course){
-        if (course.status === "interested"){
-          self.interestingCourses.push(course);
-        } else if (course.status === "in progress"){
-          self.currentCourses.push(course);
-        } else if (course.status === "complete") {
-          self.completedCourses.push(course);
-        }
+    self.updateCourse = function(courseToUpdate){
+      UserCoursesService.updateCourse(courseToUpdate, function(){
+        viewCourses();
       });
     };
 
-  self.viewCourses();
 
- });
+    var requestCourses = UserCoursesService.getMyCourses();
 
+    var sortCourses = function(courses){
+      for (var i = 0; i < courses.length; i++) {
+        if (courses[i].status === "interested"){
+          self.courses[0].push(courses[i]);
+        } else if (courses[i].status === "in progress"){
+          self.courses[1].push(courses[i]);
+        } else if (courses[i].status === "complete") {
+          self.courses[2].push(courses[i]);
+        }
+      }
+    };
 
+    var resetCourses = function(){
+      self.courses = [[],[],[]];
+    };
 
+    var viewCourses = function() {
+      resetCourses();
+      requestCourses.then(function(courses){
+        sortCourses(courses);
+      });
+    };
 
+    viewCourses();
 
- var courses = [{
-   "name": "The joy of physics",
-   "provider": "Coursera",
-   "status": "interested",
-   "id": "1"
-   },{
-   "name": "The joy of maths",
-   "provider": "Udacity",
-   "status": "in progress",
-   "id": "2"
-   },{
-   "name": "The joy of programming",
-   "provider": "Coursera",
-   "status": "complete",
-   "id": "3"
-   }];
+}]);
