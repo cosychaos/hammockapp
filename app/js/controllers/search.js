@@ -8,12 +8,13 @@ angular.module('Hammock')
 
     self.requestCourses = {"courses": courses};
 
-    self.viewCourses = function() {
-      if (self.searchTerm){
-        self.results = self.requestCourses.courses;
-      }
-    };
+    self.matchesSearchTerm = function(course) {
+      return course.name.indexOf(self.searchTerm) > -1;
+    }
 
+    self.viewCourses = function() {
+      self.results = self.requestCourses.courses.filter(self.matchesSearchTerm);
+    };
  });
 
  var courses = [{

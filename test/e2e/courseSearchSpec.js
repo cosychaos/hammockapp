@@ -17,7 +17,7 @@ describe('Search', function(){
       expect($('#search').isDisplayed()).toBeTruthy();
       expect($('#search-button').isDisplayed()).toBeTruthy();
       $('#search').sendKeys('maths');
-      $('#search-button').click();
+      $('.input-group').submit();
       expect($('#result').getText()).toContain('The joy of maths');
       expect($('#result').getText()).not.toContain('The joy of physics');
     });

@@ -5,12 +5,12 @@
   </ul>
   <div class="row">
     <div class="col-lg-6 col-md-offset-3">
-      <div class="input-group">
+      <form class="input-group" ng-submit="search.viewCourses()">
         <input id="search" ng-model="search.searchTerm" type="text" class="form-control" placeholder="Search for courses...">
         <span class="input-group-btn">
-          <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">Go!</button>
+          <button id="search-button" class="btn btn-default" type="button" ng-click="">Go!</button>
         </span>
-      </div>
+      </form>
       <ul id="result">
         <li ng-repeat="result in search.results | filter:search.searchTerm">
           <p class="result-name">{{result.name}}</p>
