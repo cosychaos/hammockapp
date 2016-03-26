@@ -48,7 +48,7 @@ describe ('userCoursesService', function(){
 
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
-      httpBackend.expectPATCH("http://localhost:3000/courses/1").respond(updatedCourse);
+      httpBackend.expectPUT("http://localhost:3000/courses/1").respond(updatedCourse);
       httpBackend.expectGET("views/main.html").respond("fine");
     }));
 
@@ -68,7 +68,7 @@ describe ('userCoursesService', function(){
 
 
 
-  var course = {
+  var course = {"courses": {
                 "id": "1",
                 "name": "The Joy of Physics",
                 "provider": "Coursera",
@@ -77,9 +77,9 @@ describe ('userCoursesService', function(){
                 "image": "some image URL",
                 "url": "course_url",
                 "status": "in progress"
-              };
+              }};
 
-  var updatedCourse = {
+  var updatedCourse = {"courses": {
                 "id": "1",
                 "name": "The Joy of Physics",
                 "provider": "Coursera",
@@ -88,7 +88,7 @@ describe ('userCoursesService', function(){
                 "image": "some image URL",
                 "url": "course_url",
                 "status": "completed"
-              };
+              }};
 
   var courseToUpdate = {
                 "id": "1",

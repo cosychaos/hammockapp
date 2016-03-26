@@ -18,22 +18,24 @@
       };
 
       self.addToMyCourses = function(course){
-        var data = JSON.stringify(course);
+        var data = JSON.stringify({"course": course});
         return $http({
           url: apiEndPoint,
           method: 'POST',
-          data: data
+          data: data,
+          headers: {'Content-Type': 'application/json'}
         }).then(function(response){
           return response.data;
         });
       };
       //
       self.updateCourse = function(course){
-        var data = JSON.stringify(course.status);
+        var data = JSON.stringify({course: course});
           return $http({
             url: apiEndPoint + "/" + course.id,
-            method: 'PATCH',
-            data: data
+            method: 'PUT',
+            data: data,
+            headers: {'Content-Type': 'application/json'}
           }).then(function(response){
             return response.data;
           });

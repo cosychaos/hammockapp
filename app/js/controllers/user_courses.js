@@ -5,28 +5,31 @@ angular
   .controller('UserCoursesCtrl', ['UserCoursesService', function(UserCoursesService) {
   	var self = this;
 
-    self.interestingCourses = [];
-    self.currentCourses = [];
-    self.completedCourses = [];
+    self.courses = [[],[],[]];
+
+    self.updateCourse = function(courseToUpdate){
+      UserCoursesService.updateCourse(courseToUpdate, function(){
+        viewCourses();
+      });
+    };
+
 
     var requestCourses = UserCoursesService.getMyCourses();
 
     var sortCourses = function(courses){
       for (var i = 0; i < courses.length; i++) {
         if (courses[i].status === "interested"){
-          self.interestingCourses.push(courses[i]);
+          self.courses[0].push(courses[i]);
         } else if (courses[i].status === "in progress"){
-          self.currentCourses.push(courses[i]);
+          self.courses[1].push(courses[i]);
         } else if (courses[i].status === "complete") {
-          self.completedCourses.push(courses[i]);
+          self.courses[2].push(courses[i]);
         }
       }
     };
 
     var resetCourses = function(){
-      self.interestingCourses = [];
-      self.currentCourses = [];
-      self.completedCourses = [];
+      self.courses = [[],[],[]];
     };
 
     var viewCourses = function() {
