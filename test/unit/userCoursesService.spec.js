@@ -68,7 +68,7 @@ describe ('userCoursesService', function(){
 
 
 
-  var course = {
+  var course = {"courses": {
                 "id": "1",
                 "name": "The Joy of Physics",
                 "provider": "Coursera",
@@ -77,9 +77,9 @@ describe ('userCoursesService', function(){
                 "image": "some image URL",
                 "url": "course_url",
                 "status": "in progress"
-              };
+              }};
 
-  var updatedCourse = {
+  var updatedCourse = {"courses": {
                 "id": "1",
                 "name": "The Joy of Physics",
                 "provider": "Coursera",
@@ -88,12 +88,12 @@ describe ('userCoursesService', function(){
                 "image": "some image URL",
                 "url": "course_url",
                 "status": "completed"
-              };
+              }};
 
-  var courseToUpdate = {
+  var courseToUpdate = {"courses": {
                 "id": "1",
                 "status": "completed"
-              };
+              }};
 
   var courses = [{
     "name": "The joy of physics",

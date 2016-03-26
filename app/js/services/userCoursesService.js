@@ -29,9 +29,9 @@
       };
       //
       self.updateCourse = function(course){
-        var data = JSON.stringify(course.status);
+        var data = JSON.stringify(course.courses.status);
           return $http({
-            url: apiEndPoint + "/" + course.id,
+            url: apiEndPoint + "/" + course.courses.id,
             method: 'PATCH',
             data: data
           }).then(function(response){

@@ -8,7 +8,7 @@
 
 <div id="interested" class="col-md-4">Interesting Courses
 	<ul>
-		<li class="interesting" ng-repeat="course in userCoursesCtrl.interestingCourses">
+		<li class="interesting" ng-repeat="course in userCoursesCtrl.courses[0]">
 			<div class="course-name">Title: {{course.name}}</div>
 			<div class="course-provider">Organisation: {{course.provider}}</div>
 		</li>
@@ -17,7 +17,7 @@
 
 <div id="current" class="col-md-4">Current Courses
 	<ul>
-		<li class="current" ng-repeat="course in userCoursesCtrl.currentCourses">
+		<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
 			<div class="course-name">Title: {{course.name}}</div>
 			<div class="course-provider">Organisation: {{course.provider}}</div>
 		</li>
@@ -26,7 +26,7 @@
 
 <div id="completed" class="col-md-4">Completed Courses
 	<ul>
-		<li class="completed" ng-repeat="course in userCoursesCtrl.completedCourses">
+		<li class="completed" ng-repeat="course in userCoursesCtrl.courses[2]">
 			<div class="course-name">Title: {{course.name}}</div>
 			<div class="course-provider">Organisation: {{course.provider}}</div>
 		</li>

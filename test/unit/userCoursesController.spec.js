@@ -3,7 +3,7 @@ describe('UserCoursesCtrl', function(){
 	var ctrl, MockUserCoursesService, scope;
 
 	beforeEach (function(){
-		MockUserCoursesService = jasmine.createSpyObj('UserCoursesService', ['getMyCourses', 'addToMyCourses', 'updateCourses']);
+		MockUserCoursesService = jasmine.createSpyObj('UserCoursesService', ['getMyCourses', 'addToMyCourses', 'updateCourse']);
 		module('Hammock', {UserCoursesService: MockUserCoursesService});
 	});
 
@@ -15,7 +15,7 @@ describe('UserCoursesCtrl', function(){
     });
   });
 
-	describe ('viewCourses', function(){
+	describe ('on initilization', function(){
 
 		beforeEach(inject(function($httpBackend){
 			httpBackend = $httpBackend;
@@ -24,22 +24,53 @@ describe('UserCoursesCtrl', function(){
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
 			scope.$apply();
-			expect(ctrl.interestingCourses.length).toBe(1);
+			expect(ctrl.courses[0].length).toBe(1);
 		});
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
 			scope.$apply();
-			expect(ctrl.currentCourses.length).toBe(1);
+			expect(ctrl.courses[1].length).toBe(1);
 		});
 
 		it ("sorts courses into different categories depending on the status of the course", function(){
 			scope.$apply();
-			expect(ctrl.completedCourses.length).toBe(1);
+			expect(ctrl.courses[2].length).toBe(1);
+		});
+
+	});
+
+	describe ('#updateCourse', function(){
+
+		beforeEach(inject(function($httpBackend){
+			httpBackend = $httpBackend;
+			httpBackend.expectGET("views/main.html").respond("fine");
+		}));
+
+		it ("passes the request to the userCoursesService", function(){
+			ctrl.updateCourse(courseToUpdate);
+			scope.$apply();
+			expect(MockUserCoursesService.updateCourse).toHaveBeenCalledWith(courseToUpdate);
+		});
+
+		it ("moves the course if the status has been changed", function(){
+			ctrl.updateCourse(courseToUpdate, function(){
+				MockUserCoursesService.getMyCourses.and.returnValue($q.when(updatedCourses), function(){
+						ctrl.updateView(function(){
+							scope.$apply();
+							expect(ctrl.courses[2].length).toBe(2);
+							expect(ctrl.courses[0].length).toBe(0);
+						});
+					});
+			});
 		});
 
 	});
 
 
+	var courseToUpdate = {"courses": {
+                "id": "1",
+                "status": "completed"
+              }};
 
 	var courses = [{
 		"name": "The joy of physics",
@@ -57,4 +88,21 @@ describe('UserCoursesCtrl', function(){
 		"status": "complete",
 		"id": "3"
 		}];
+
+var updatedCourses = [{
+		"name": "The joy of physics",
+		"provider": "Coursera",
+		"status": "complete",
+		"id": "1"
+		},{
+		"name": "The joy of maths",
+		"provider": "Udacity",
+		"status": "in progress",
+		"id": "2"
+		},{
+		"name": "The joy of programming",
+		"provider": "Coursera",
+		"status": "complete",
+		"id": "3"
+	}];
 });
