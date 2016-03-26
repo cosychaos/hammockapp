@@ -11,6 +11,10 @@
 		<li class="interesting" ng-repeat="course in userCoursesCtrl.courses[0]">
 			<div class="course-name">Title: {{course.name}}</div>
 			<div class="course-provider">Organisation: {{course.provider}}</div>
+			<div class="update-course">
+				 <button id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})">Start Course</button>
+			</div>
+
 		</li>
 	</ul>
 </div>
@@ -20,6 +24,9 @@
 		<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
 			<div class="course-name">Title: {{course.name}}</div>
 			<div class="course-provider">Organisation: {{course.provider}}</div>
+			<div class="update-course">
+				 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
+			</div>
 		</li>
 	</ul>
 </div>

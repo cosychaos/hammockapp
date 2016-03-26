@@ -22,18 +22,20 @@
         return $http({
           url: apiEndPoint,
           method: 'POST',
-          data: data
+          data: data,
+          headers: {'Content-Type': 'application/json'}
         }).then(function(response){
           return response.data;
         });
       };
       //
       self.updateCourse = function(course){
-        var data = JSON.stringify(course.courses.status);
+        var data = JSON.stringify({course: course});
           return $http({
-            url: apiEndPoint + "/" + course.courses.id,
-            method: 'PATCH',
-            data: data
+            url: apiEndPoint + "/" + course.id,
+            method: 'PUT',
+            data: data,
+            headers: {'Content-Type': 'application/json'}
           }).then(function(response){
             return response.data;
           });

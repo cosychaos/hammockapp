@@ -8,7 +8,9 @@ angular
     self.courses = [[],[],[]];
 
     self.updateCourse = function(courseToUpdate){
-      UserCoursesService.updateCourse(courseToUpdate);
+      UserCoursesService.updateCourse(courseToUpdate, function(){
+        viewCourses();
+      });
     };
 
 
@@ -35,10 +37,6 @@ angular
       requestCourses.then(function(courses){
         sortCourses(courses);
       });
-    };
-
-    self.updateView = function(){
-      viewCourses();
     };
 
     viewCourses();

@@ -49,28 +49,29 @@ describe('UserCoursesCtrl', function(){
 		it ("passes the request to the userCoursesService", function(){
 			ctrl.updateCourse(courseToUpdate);
 			scope.$apply();
-			expect(MockUserCoursesService.updateCourse).toHaveBeenCalledWith(courseToUpdate);
+			expect(MockUserCoursesService.updateCourse).toHaveBeenCalled();
 		});
 
 		it ("moves the course if the status has been changed", function(){
-			ctrl.updateCourse(courseToUpdate, function(){
+			scope.$apply();
+			expect(ctrl.courses[0].length).toBe(1);
+			inject(function($q){
 				MockUserCoursesService.getMyCourses.and.returnValue($q.when(updatedCourses), function(){
-						ctrl.updateView(function(){
-							scope.$apply();
-							expect(ctrl.courses[2].length).toBe(2);
-							expect(ctrl.courses[0].length).toBe(0);
-						});
-					});
+					ctrl.updateCourse(courseToUpdate);
+					expect(ctrl.courses[2].length).toBe(2);
+					expect(ctrl.courses[1].length).toBe(1);
+					expect(ctrl.courses[0].length).toBe(0);
+				});
 			});
 		});
 
 	});
 
 
-	var courseToUpdate = {"courses": {
+	var courseToUpdate = {
                 "id": "1",
                 "status": "completed"
-              }};
+              	};
 
 	var courses = [{
 		"name": "The joy of physics",

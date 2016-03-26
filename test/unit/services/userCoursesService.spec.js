@@ -48,7 +48,7 @@ describe ('userCoursesService', function(){
 
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend;
-      httpBackend.expectPATCH("http://localhost:3000/courses/1").respond(updatedCourse);
+      httpBackend.expectPUT("http://localhost:3000/courses/1").respond(updatedCourse);
       httpBackend.expectGET("views/main.html").respond("fine");
     }));
 
@@ -90,10 +90,10 @@ describe ('userCoursesService', function(){
                 "status": "completed"
               }};
 
-  var courseToUpdate = {"courses": {
+  var courseToUpdate = {
                 "id": "1",
                 "status": "completed"
-              }};
+              };
 
   var courses = [{
     "name": "The joy of physics",
