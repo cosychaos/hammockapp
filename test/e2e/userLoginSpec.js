@@ -1,4 +1,4 @@
-xdescribe('Hammock homepage', function() {
+describe('Hammock homepage', function() {
 	beforeEach(function() {
 		browser.get('http://localhost:8000');
 	});

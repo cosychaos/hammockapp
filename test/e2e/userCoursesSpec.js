@@ -1,4 +1,4 @@
-xdescribe('User course page', function() {
+describe('User course page', function() {
 	var helper = require('./helper.js');
 
 	beforeEach(function() {
@@ -18,7 +18,7 @@ xdescribe('User course page', function() {
 			var firstCourse = courses.first();
 		});
 
-		it ("displays my courses in different categories", function(){
+	it ("displays my courses in different categories", function(){
 			expect($('#interested').getText()).toContain('Interesting Courses');
 			var firstInterested = element.all(by.css('.interesting')).first();
 			expect(firstInterested.element(by.css('.course-name')).getText()).toContain('The joy of physics');
