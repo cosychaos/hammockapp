@@ -1,6 +1,6 @@
-xdescribe('Hammock homepage', function() {
+describe('Hammock homepage', function() {
 	beforeEach(function() {
-		browser.get('http://localhost:8000');
+		browser.get('http://localhost:8000/');
 	});
 
 	describe ('user can register', function(){
