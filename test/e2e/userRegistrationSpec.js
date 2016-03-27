@@ -7,6 +7,7 @@ describe('Hammock homepage', function() {
 
 		it('displays registration form', function(){
 			$('#register').click();
+			expect(browser.getCurrentUrl()).toContain('register');
 			expect($('#submit-registration').isDisplayed()).toBe(true);
 		});
 

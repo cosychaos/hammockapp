@@ -1,38 +1,45 @@
 <div class="container-fluid">
-	<h2 class="text-center">My Courses</h2>
-
-<div id="interested" class="col-md-4"> Interesting Courses
-	<ul>
-		<li class="interested" ng-repeat="course in userCoursesCtrl.courses[0]">
-			<div class="course-name">Title: {{course.name}}</div>
-			<div class="course-provider">Organisation: {{course.provider}}</div>
-			<div class="update-course">
-				 <button id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})">Start Course</button>
+	<ul class="nav nav-pills">
+	  <li role="presentation"><a href="#/mycourses" id="my-courses">My Courses</a></li>
+	  <li role="presentation"><a href="#/search" id="add-courses">Add Courses</a></li>
+	</ul>
+	<div class="row">
+		<div id="interested" class="col-xs-12 col-md-4 text-center">
+			<h3>Interesting Courses</h3>
+				<ul>
+					<li class="interested" ng-repeat="course in userCoursesCtrl.courses[0]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+						<div class="update-course">
+							 <button id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})">Start Course</button>
+						</div>
+					</li>
+				</ul>
 			</div>
 
-		</li>
-	</ul>
-</div>
-
-<div id="current" class="col-md-4">Current Courses
-	<ul>
-		<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
-			<div class="course-name">Title: {{course.name}}</div>
-			<div class="course-provider">Organisation: {{course.provider}}</div>
-			<div class="update-course">
-				 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
+			<div id="current" class="col-xs-12 col-md-4 text-center">
+				<h3>Current Courses</h3>
+				<ul>
+					<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+						<div class="update-course">
+							 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
+						</div>
+					</li>
+				</ul>
 			</div>
-		</li>
-	</ul>
-</div>
 
-<div id="completed" class="col-md-4">Completed Courses
-	<ul>
-		<li class="completed" ng-repeat="course in userCoursesCtrl.courses[2]">
-			<div class="course-name">Title: {{course.name}}</div>
-			<div class="course-provider">Organisation: {{course.provider}}</div>
-		</li>
-	</ul>
+			<div id="completed" class="col-xs-12 col-md-4 text-center">
+			<h3>Completed Courses</h3>
+				<ul>
+					<li class="completed" ng-repeat="course in userCoursesCtrl.courses[2]">
+						<div class="course-name">Title: {{course.name}}</div>
+						<div class="course-provider">Organisation: {{course.provider}}</div>
+					</li>
+				</ul>
+		</div>
+	</div>
 </div>
 
 </div>
