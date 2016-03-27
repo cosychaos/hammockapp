@@ -20,7 +20,7 @@ describe('User course page', function() {
 
 	it ("displays my courses in different categories", function(){
 			expect($('#interested').getText()).toContain('Interesting Courses');
-			var firstInterested = element.all(by.css('.interesting')).first();
+			var firstInterested = element.all(by.css('.interested')).first();
 			expect(firstInterested.element(by.css('.course-name')).getText()).toContain('The joy of physics');
 
 			expect($('#current').getText()).toContain('Current Courses');

@@ -1,12 +1,13 @@
 describe('Hammock homepage', function() {
 	beforeEach(function() {
-		browser.get('http://localhost:8000');
+		browser.get('http://localhost:8000/');
 	});
 
 	describe ('user can register', function(){
 
 		it('displays registration form', function(){
 			$('#register').click();
+			expect(browser.getCurrentUrl()).toContain('register');
 			expect($('#submit-registration').isDisplayed()).toBe(true);
 		});
 
