@@ -11,10 +11,13 @@
           <button id="search-button" class="btn btn-default" type="button" ng-click="">Go!</button>
         </span>
       </form>
-      <ul id="result">
+      <ul id="result" ng-controller="CreateCourseCtrl as create">
         <li ng-repeat="result in search.results | filter:search.searchTerm">
-          <p class="result-name">{{result.name}}</p>
+          <a ng-href="{{result.url}}" class="result-name">{{result.name}}</a>
           <div class="result-provider">{{result.provider}}</div>
+          <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default">Enroll</button>
+          <!-- <span ng-click="create.addCourse({id: result.id})" class="glyphicon glyphicon-star-empty"></span> -->
+           <button ng-click="create.addCourse({id: result.id})" class="btn btn-default">Favorite</button>
         </li>
       </ul>
     </div>
