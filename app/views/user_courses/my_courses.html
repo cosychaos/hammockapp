@@ -1,42 +1,63 @@
 <div class="container-fluid">
 	<ul class="nav nav-pills">
-	  <li role="presentation"><a href="#/mycourses" id="my-courses">My Courses</a></li>
-	  <li role="presentation"><a href="#/search" id="add-courses">Add Courses</a></li>
+	  <li role="presentation"><a href="#/mycourses" id="my-courses" class="course-tabs">My Courses</a></li>
+	  <li role="presentation"><a href="#/search" id="add-courses" class="course-tabs">Add Courses</a></li>
 	</ul>
 	<div class="row">
-		<div id="interested" class="col-xs-12 col-md-4 text-center">
+		<div id="interested" class="col-xs-12 col-md-4 text-center course-header">
 			<h3>Interesting Courses</h3>
 				<ul>
-					<li class="interested" ng-repeat="course in userCoursesCtrl.courses[0]">
-						<div class="course-name">Title: {{course.name}}</div>
-						<div class="course-provider">Organisation: {{course.provider}}</div>
-						<div class="update-course">
-							 <button id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})">Start Course</button>
+					<li class="interested well" ng-repeat="course in userCoursesCtrl.courses[0]">
+						<div class="row">
+							<div class="col-md-3 col-s-4 col-xs-4">
+							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+							</div>
+						<div class="col-md-7 col-s-5 col-xs-4">
+							<a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
+							<h5 class="course-provider">{{course.provider}}</h5>
+						</div>
+							<div class="col-md-2 col-s-3 col-xs-4 update-course">
+								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-play bigger-glyph"></span></a>
+							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
 
-			<div id="current" class="col-xs-12 col-md-4 text-center">
+			<div id="current" class="col-xs-12 col-md-4 text-center course-header">
 				<h3>Current Courses</h3>
 				<ul>
-					<li class="current well" ng-repeat="course in userCoursesCtrl.courses[1]">
-						<div class="course-name">Title: {{course.name}}</div>
-						<div class="course-provider">Organisation: {{course.provider}}</div>
-						<div class="update-course">
-							<button id="plan" ng-click="#/mycourses/{{}}">Plan</button>
-							 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
+					<li class="current well-green well" ng-repeat="course in userCoursesCtrl.courses[1]">
+						<div class="row">
+							<div class="col-md-3 col-s-5 col-xs-8">
+							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+							</div>
+							<div class="col-md-7 col-s-5 col-xs-5">
+								 <a ng-href="{{course.url}}" class="course-name-current"><h4>{{course.name}}</h4></a>
+								 <h5 class="course-provider-current">{{course.provider}}</h5>
+							</div>
+							<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
+								<a id="plan" ng-click="#/mycourses/{{}}"><span class="glyphicon glyphicon-th-list bigger-glyph-white"></span></a>
+								<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok bigger-glyph-white"></span></a>
+							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
 
-			<div id="completed" class="col-xs-12 col-md-4 text-center">
+			<div id="completed" class="col-xs-12 col-md-4 text-center course-header">
 			<h3>Completed Courses</h3>
 				<ul>
-					<li class="completed" ng-repeat="course in userCoursesCtrl.courses[2]">
-						<div class="course-name">Title: {{course.name}}</div>
-						<div class="course-provider">Organisation: {{course.provider}}</div>
+					<li class="completed well" ng-repeat="course in userCoursesCtrl.courses[2]">
+						<div class="row">
+							<div class="col-md-3 col-s-5 col-xs-8">
+							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+							</div>
+							<div class="col-md-9 col-s-5 col-xs-5">
+								<a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
+							</div>
+							<h5 class="course-provider">{{course.provider}}</h5>
+						</div>
 					</li>
 				</ul>
 		</div>

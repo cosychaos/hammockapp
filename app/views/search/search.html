@@ -3,23 +3,29 @@
     <li role="presentation"><a href="#/mycourses" id="my-courses">My Courses</a></li>
     <li role="presentation"><a href="#/search" id="add-courses">Add Courses</a></li>
   </ul>
-  <div class="row">
     <div class="col-lg-6 col-md-offset-3">
       <form class="input-group" ng-submit="search.viewCourses()">
         <input id="search" ng-model="search.searchTerm" type="text" class="form-control" placeholder="Search for courses...">
         <span class="input-group-btn">
-          <button id="search-button" class="btn btn-default" type="button" ng-click="">Go!</button>
+          <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">Go!</button>
         </span>
       </form>
       <ul id="result" ng-controller="CreateCourseCtrl as create">
-        <li ng-repeat="result in search.results | filter:search.searchTerm">
-          <a ng-href="{{result.url}}" class="result-name">{{result.name}}</a>
-          <div class="result-provider">{{result.provider}}</div>
-          <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default">Enroll</button>
-          <!-- <span ng-click="create.addCourse({id: result.id})" class="glyphicon glyphicon-star-empty"></span> -->
-           <button ng-click="create.addCourse({id: result.id})" class="btn btn-default">Favorite</button>
+        <li class="well m-t-10" ng-repeat="result in search.results | filter:search.searchTerm">
+          <div class="row">
+            <div class="col-md-3 col-s-5 col-xs-8">
+              <img ng-src="{{result.image}}" class="thumbnail course-image"/>
+            </div>
+            <div class="col-md-7 col-s-5 col-xs-5">
+              <a ng-href="{{result.url}}" class="result-name">{{result.name}}</a>
+              <p class="result-provider">{{result.provider}}</p>
+            </div>
+            <div class="col-md-2 col-s-2 col-xs-2">
+              <a ng-click="create.addCourse({id: result.id})"><span ng-click="myVar='active-glyph'" class="glyphicon glyphicon-star-empty" ng-class="myVar"></span></a>
+              <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default">Enroll</button>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
-  </div>
 </div>

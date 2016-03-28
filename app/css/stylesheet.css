@@ -10,8 +10,27 @@ h1 {
 li {
   list-style: none;
 }
+
 .navbar {
   margin-bottom: 0;
+}
+
+.inactive-glyph {
+  color: #333;
+}
+
+.active-glyph {
+  color: #1cca97;
+  font-size:1.5em
+}
+
+.course-image {
+  width:80%;
+  height: 80%;
+}
+
+.well-green{
+  background-color: #1cca97;
 }
 
 #background {
@@ -30,6 +49,7 @@ li {
 #sign_in:hover, #register:hover{
   color: #00976b;
 }
+
 #logo-text{
   font-size: 40px;
   text-decoration: none;
@@ -43,19 +63,23 @@ li {
   padding-right: 20px;
 }
 
-#sign_in{
+#sign_in {
 	font-size: 30px;
 	margin-left:20px;
 }
 
-#register{
+#register {
 	font-size: 30px;
 	margin-left: 30px;
 }
 
-#logo-small{
+#logo-small {
   margin-left: 30px;
   margin-bottom: 15px;
+}
+
+#start-course {
+  margin-top: 30%;
 }
 
 .navbar-item {
@@ -70,7 +94,68 @@ li {
   padding-bottom: 30px;
 }
 
+.course-header {
+  font-family: 'Titillium Web', sans-serif;
+  margin-bottom: 20px;
+}
+
+.course-buttons {
+  margin-top: 8%;
+}
+
+.course-provider-current {
+  font-family: 'Titillium Web', sans-serif;
+  color: #e8e8e8;
+}
+.course-name {
+  color:#00976b;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.course-name-current {
+  color:#fff;
+  font-family: 'Titillium Web', sans-serif;
+}
+.course-name-current:hover {
+  color:#00976b;
+  text-decoration: none;
+}
+
+.course-tabs {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+}
+
+.course-provider {
+  font-family: 'Titillium Web', sans-serif;
+  color: #888;
+}
+
+.course-name:hover {
+  color:#1cca97;
+  text-decoration: none;
+}
+
 .buttons {
   margin-top: 5%;
   text-align: center;
+}
+
+.my-course-image {
+  margin-top: 15%;
+  max-width: 100px;
+  max-height: 80px;
+  margin-right: 15px;
+}
+
+.bigger-glyph {
+  font-size: 1.6em;
+  color: #1cca97;
+  margin-top: 40px;
+}
+
+.bigger-glyph-white{
+  font-size: 1.3em;
+  color: #fff;
+  margin-right: 3px;
 }

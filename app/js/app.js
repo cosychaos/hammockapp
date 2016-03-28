@@ -34,7 +34,12 @@
         templateUrl: 'views/modules/modules.html',
         controller:'courseModules'
 
-    })
+      })
+      .when('/search', {
+        templateUrl: 'views/search/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+     })
 		  .otherwise({
         redirectTo: '/'
       });
