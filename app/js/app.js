@@ -30,6 +30,11 @@
         controller: 'UserCoursesCtrl',
         controllerAs: 'userCoursesCtrl'
       })
+      .when('/search', {
+        templateUrl: 'views/search/search.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'search'
+     })
 		  .otherwise({
         redirectTo: '/'
       });
