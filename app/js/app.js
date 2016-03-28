@@ -30,6 +30,11 @@
         controller: 'UserCoursesCtrl',
         controllerAs: 'userCoursesCtrl'
       })
+      .when('/mycourses/:ID/modules', {
+        templateUrl: 'views/modules/modules.html',
+        controller:'courseModules'
+
+    })
 		  .otherwise({
         redirectTo: '/'
       });

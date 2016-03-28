@@ -20,10 +20,11 @@
 			<div id="current" class="col-xs-12 col-md-4 text-center">
 				<h3>Current Courses</h3>
 				<ul>
-					<li class="current" ng-repeat="course in userCoursesCtrl.courses[1]">
+					<li class="current well" ng-repeat="course in userCoursesCtrl.courses[1]">
 						<div class="course-name">Title: {{course.name}}</div>
 						<div class="course-provider">Organisation: {{course.provider}}</div>
 						<div class="update-course">
+							<button id="plan" ng-click="#/mycourses/{{}}">Plan</button>
 							 <button id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})">Course Completed</button>
 						</div>
 					</li>
