@@ -30,11 +30,6 @@
         controller: 'UserCoursesCtrl',
         controllerAs: 'userCoursesCtrl'
       })
-      .when('/search', {
-        templateUrl: 'views/search/search.html',
-        controller: 'SearchCtrl',
-        controllerAs: 'search'
-      })
 		  .otherwise({
         redirectTo: '/'
       });
@@ -44,7 +39,7 @@
 	.config(['$authProvider', function($authProvider){
 		$authProvider.configure({
 			apiUrl: 'http://localhost:3000'
-		})
+		});
 	}])
 
 	.run(['$rootScope', '$location', function($rootScope, $location) {
