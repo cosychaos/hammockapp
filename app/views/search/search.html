@@ -3,12 +3,11 @@
     <li role="presentation"><a href="#/mycourses" id="my-courses">My Courses</a></li>
     <li role="presentation"><a href="#/search" id="add-courses">Add Courses</a></li>
   </ul>
-  <!-- <div class="row"> -->
     <div class="col-lg-6 col-md-offset-3">
       <form class="input-group" ng-submit="search.viewCourses()">
         <input id="search" ng-model="search.searchTerm" type="text" class="form-control" placeholder="Search for courses...">
         <span class="input-group-btn">
-          <button id="search-button" class="btn btn-default" type="button" ng-click="">Go!</button>
+          <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">Go!</button>
         </span>
       </form>
       <ul id="result" ng-controller="CreateCourseCtrl as create">
@@ -29,5 +28,4 @@
         </li>
       </ul>
     </div>
-  <!-- </div> -->
 </div>
