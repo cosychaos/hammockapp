@@ -32,8 +32,8 @@
       })
       .when('/mycourses/:ID/modules', {
         templateUrl: 'views/modules/modules.html',
-        controller:'courseModules'
-
+        controller:'CourseModulesCtrl',
+        controllerAs: 'course'
       })
       .when('/search', {
         templateUrl: 'views/search/search.html',
