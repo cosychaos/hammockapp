@@ -14,6 +14,20 @@ li {
   margin-bottom: 0;
 }
 
+.inactive-glyph {
+  color: #333;
+}
+
+.active-glyph {
+  color: #1cca97;
+  font-size:1.5em
+}
+
+.course-image{
+  width:80%;
+  height: 80%;
+}
+
 #background {
   background-image: url('../assets/background-image.jpg');
   background-size: cover;
@@ -74,3 +88,4 @@ li {
   margin-top: 5%;
   text-align: center;
 }
+
