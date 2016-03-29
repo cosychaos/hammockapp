@@ -2,17 +2,26 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:active,
+a:active:hover,
+a.active:hover,
+a:active:focus {
   text-decoration: none;
 }
 
-h1, #logo-text, #hook {
+h1, h2, #logo-text, #hook {
 	font-family: 'Amaranth', sans-serif;
   color: #0A3C5C;
 }
 
 h1 {
   font-size: 70px;
+}
+
+h3 {
+  font-family: 'Titillium Web', sans-serif;
+  color: #0A3C5C;
 }
 
 li {
@@ -39,15 +48,31 @@ li {
   margin-left: 30px;
   margin-bottom: 15px;
 }
+#module-input{
+  margin-top: 20px;
+}
 
-#sign_out {
-  float:right;
-  color: #333;
-  padding-right: 20px;
+#navigation {
+  display:inline;
+  background-color: red;
 }
 
 #start-course {
   margin-top: 30%;
+}
+
+.animate-show {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    opacity: 1;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    display: inline-block !important;
+}
+.animate-show.ng-hide {
+    opacity: 0;
 }
 
 .buttons {
@@ -105,19 +130,69 @@ li {
 .course-tabs {
   font-family: 'Titillium Web', sans-serif;
   font-size: 15px;
+  float: right;
 }
 
-.green-button {
+.btn-success {
   background-color: #1cca97;
+  color: #EDFAF6;
   font-size: 24px;
   font-family: 'Titillium Web', sans-serif;
   min-width: 300px;
   margin-top: 10px;
 }
 
-.green-button:hover {
-  color: #0A3C5C;
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:hover,
+.btn-success.active:hover,
+.btn-success:active:focus{
+  background-color: #1cca97;
+  color: #FFF;
   font-weight: bold;
+}
+.check-box {
+  margin-top:22px;
+}
+.checkbox-custom {
+  width: 25px;
+  position: relative;
+}
+
+.checkbox-custom label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border:1px solid #ddd;
+}
+
+.checkbox-custom label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  background: transparent;
+  top: 6px;
+  left: 6px;
+  border: 3px solid #1cca97;
+  border-top: none;
+  border-right: none;
+
+  transform: rotate(-45deg);
+}
+
+.checkbox-custom label:hover::after {
+  opacity: 0.5;
+}
+
+.checkbox-custom input[type=checkbox]:checked + label:after {
+  opacity: 1;
 }
 
 .my-course-image {
@@ -128,9 +203,9 @@ li {
 }
 
 .glyph-bigger {
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: #1cca97;
-  margin-top: 40px;
+  margin-top: 22px;
 }
 
 .glyph-bigger-white {

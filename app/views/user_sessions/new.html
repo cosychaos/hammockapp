@@ -1,32 +1,31 @@
   <div id="background" class="container-fluid">
     <div class= "text-center col-md-4 col-md-offset-4 container-box">
       <a href="#/"><h1>Hammock</h1></a>
-      <div class="col-md-8 col-md-offset-2">
         <form id="submit-login" ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-          <div class="form-group">
-            <input type="email"
-                   name="email"
-                   id="email"
-                   ng-model="loginForm.email"
-                   required="required"
-                   class="form-control"
-                   placeholder="Email">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+              <input type="email"
+                     name="email"
+                     id="email"
+                     ng-model="loginForm.email"
+                     required="required"
+                     class="form-control"
+                     placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password"
+                     name="password"
+                     id="password"
+                     ng-model="loginForm.password"
+                     required="required"
+                     class="form-control"
+                     placeholder="Password">
+            </div>
           </div>
-
-          <div class="form-group">
-            <input type="password"
-                   name="password"
-                   id="password"
-                   ng-model="loginForm.password"
-                   required="required"
-                   class="form-control"
-                   placeholder="Password">
-          </div>
-          <div class-"col-md-4">
+          <div class="col-md-4 col-md-offset-1">
            <button id="submit" type="submit" class="btn btn-success green-button" id="sign_in">Log in</button>
           </div>
           <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
         </form>
-      </div>
     </div>
   </div>

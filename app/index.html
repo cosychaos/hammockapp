@@ -32,8 +32,12 @@
   <nav class="navbar navbar-default">
     <img id="logo-small" class="navbar-item" src="assets/logo.png" alt="Hammock Logo" style="width:40px;height:40px;">
     <a href="#/" id="logo-text" class="navbar-item">Hammock</a>
-    <li id="sign_out" class="navbar-item" ng-show="user.id"><a ng-click='signOut()' href="#/" >Sign out</a></li>
-  </nav>
+    <ul id="navigation"class="nav nav-pills" ng-show="user.id">
+      <li role="presentation"><a href="#/mycourses" id="my-courses" class="course-tabs">My Courses</a></li>
+      <li role="presentation"><a href="#/search" id="add-courses" class="course-tabs">Add Courses</a></li>
+      <li role="presentation"><a ng-click='signOut()' id="sign_out" href="#/" class="course-tabs">Sign out</a></li>
+    </ul> 
+    </nav>
 	<div ng-view></div>
 </body>
 </html>

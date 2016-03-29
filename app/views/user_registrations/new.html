@@ -1,43 +1,40 @@
   <div id="background" class="container-fluid">
     <div class= "text-center col-md-4 col-md-offset-4 container-box">
       <a href="#/"><h1>Hammock</h1></a>
-      <div class="col-md-8 col-md-offset-2">
       <form id="submit-registration" ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email"
-                 name="email"
-                 id="email"
-                 ng-model="registrationForm.email"
-                 required="required"
-                 class="form-control">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="form-group">
+            <input type="email"
+                   name="email"
+                   id="email"
+                   ng-model="registrationForm.email"
+                   required="required"
+                   class="form-control"
+                   placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password"
+                   name="password"
+                   id="password"
+                   ng-model="registrationForm.password"
+                   required="required"
+                   class="form-control"
+                   placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input type="password"
+                   name="password_confirmation"
+                   id="password_confirmation"
+                   ng-model="registrationForm.password_confirmation"
+                   required="required"
+                   class="form-control"
+                   placeholder="Password Confirmation">
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password"
-                 name="password"
-                 id="password"
-                 ng-model="registrationForm.password"
-                 required="required"
-                 class="form-control">
+        <div class="col-md-4 col-md-offset-1">
+         <button type="submit" class="btn btn-success green-button">Register</button>
         </div>
-
-        <div class="form-group">
-          <label for="password_confirmation">Password confirmation</label>
-          <input type="password"
-                 name="password_confirmation"
-                 id="password_confirmation"
-                 ng-model="registrationForm.password_confirmation"
-                 required="required"
-                 class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-lg">Register</button>
-
-
         <div class="alert alert-danger" role="alert" ng-show="error">{{error}}</div>
       </form>
-     </div>
     </div>
   </div>

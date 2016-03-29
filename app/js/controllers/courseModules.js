@@ -18,4 +18,12 @@ angular
         self.modules.splice(lastItem);
       };
 
+      self.hoverIn = function(){
+          self.hoverEdit = true;
+      };
+
+      self.hoverOut = function(){
+          self.hoverEdit = false;
+      };
+
   }]);
