@@ -5,7 +5,7 @@ angular
   .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
       var self = this;
       self.courseID = $routeParams.ID;
-      self.modules=[{text:"task 1", done:false}, {text: "task 2", done:true}];
+      self.modules=[{id: 0, text:"task 1", done:false}, {id: 1, text: "task 2", done:true}];
 
       self.addNewModule = function() {
         self.modules.push({
@@ -14,9 +14,13 @@ angular
         self.moduleName = "";
       };
 
-      self.removeChoice = function() {
-        var lastItem = self.modules.length-1;
-        self.modules.splice(lastItem);
+      // self.editModule = function(module){
+
+      // };
+
+      self.deleteModule = function(module){
+        var index = self.modules.indexOf(module);
+        self.modules.splice(index, 1);
       };
 
       self.hoverIn = function(){
