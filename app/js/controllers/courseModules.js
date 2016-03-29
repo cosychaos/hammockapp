@@ -25,9 +25,16 @@ angular
             module.done = self.selectedAll;
         });
       };
-      // self.editModule = function(module){
 
-      // };
+      self.toggleEditMode = function(){
+          $(event.target).closest('li').toggleClass('editing');
+      };
+      
+      self.editModule = function(module){
+        if(event.keyCode == 13 && todo.text){
+          self.toggleEditMode();
+        }
+      };
 
       self.deleteModule = function(module){
         var index = self.modules.indexOf(module);

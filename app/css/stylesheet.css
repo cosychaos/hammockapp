@@ -238,6 +238,27 @@ li {
   font-size:1.5em
 }
 
+li:last-child {
+  border-bottom: none;
+}
+
+li .edit {
+    display: none;
+}
+li.editing {
+  border-bottom: 1px solid #778899;
+}
+
+li.editing .view {
+  display: none;
+}
+li.editing .edit {
+  display: block;
+  width: 444px;
+  padding: 13px 15px 14px 20px;
+  margin: 0;
+}
+
 .navbar {
   margin-bottom: 0;
 }

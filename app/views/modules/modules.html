@@ -21,13 +21,16 @@
                      placeholder="Enter new module">
             </form>
             <ul>
-               <li ng-repeat="module in course.modules" ng-mouseover="course.hoverIn()" ng-mouseleave="course.hoverOut()">
+               <li ng-repeat="module in course.modules" ng-mouseover="course.hoverIn()" ng-mouseleave="course.hoverOut()" ng-dblclick="course.toggleEditMode()">
                   <div class="row">
                     <div class="col-md-2 col-s-2 col-xs-2 check-box">
                       <div class="checkbox-custom">
                         <form>
+                         <div class="view" ng-keyup="course.editModule()">
                           <input type="checkbox" value="1" ng-model="module.done" id="{{$index}}" />
                           <label for="{{$index}}"></label>
+                          </div>
+                          <input class="edit" type="text" ng-model="module.text" ng-keyup="course.editModule(module)"/>
                         </form>
                       </div>
                     </div>
