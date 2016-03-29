@@ -1,9 +1,16 @@
   <div id="background" class="container-fluid">
     <div class= "text-center col-md-4 col-md-offset-4 container-box">
-      <div class="buttons text-center ">
-      	<p><h1>Hammock</h1></p>
-        <a ng-show="!user.id" href="/#/sign_in" id="sign_in">Log in</a>
-        <a ng-show="!user.id" href="/#/register" id="register">Register</a>
+      <div class="buttons text-center row">
+      	<a href="#/"><h1 id="hook-header">Hammock</h1></a>
+      	<h4 id="hook">All your online courses in one place</h4>
+      	<div class="row">
+	      	<div class-"col-md-4">
+	        	<a class="btn btn-success green-button" ng-show="!user.id" href="/#/sign_in" id="sign_in">Log in</a>
+	        </div>
+	        <div class-"col-md-4">
+	        	<a class="btn green-button btn-success" ng-show="!user.id" href="/#/register" id="register">Register</a>
+	        </div>
+	      </div>
       </div>
     </div>
   </div>

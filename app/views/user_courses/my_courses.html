@@ -17,7 +17,7 @@
 							<h5 class="course-provider">{{course.provider}}</h5>
 						</div>
 							<div class="col-md-2 col-s-3 col-xs-4 update-course">
-								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-play bigger-glyph"></span></a>
+								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-play glyph-bigger"></span></a>
 							</div>
 						</div>
 					</li>
@@ -37,8 +37,8 @@
 								 <h5 class="course-provider-current">{{course.provider}}</h5>
 							</div>
 							<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
-								<a href="#/mycourses/{{course.id}}/modules" id="plan"><span class="glyphicon glyphicon-th-list bigger-glyph-white"></span></a>
-								<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok bigger-glyph-white"></span></a>
+								<a href="#/mycourses/{{course.id}}/modules" id="plan"><span class="glyphicon glyphicon-th-list glyph-bigger-white"></span></a>
+								<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok glyph-bigger-white"></span></a>
 							</div>
 						</div>
 					</li>

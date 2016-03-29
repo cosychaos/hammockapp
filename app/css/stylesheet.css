@@ -1,36 +1,22 @@
-h1, #logo-text{
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, #logo-text, #hook {
 	font-family: 'Amaranth', sans-serif;
+  color: #0A3C5C;
 }
 
 h1 {
   font-size: 70px;
-  opacity: 1;
 }
 
 li {
   list-style: none;
-}
-
-.navbar {
-  margin-bottom: 0;
-}
-
-.inactive-glyph {
-  color: #333;
-}
-
-.active-glyph {
-  color: #1cca97;
-  font-size:1.5em
-}
-
-.course-image {
-  width:80%;
-  height: 80%;
-}
-
-.well-green{
-  background-color: #1cca97;
 }
 
 #background {
@@ -40,21 +26,18 @@ li {
   height:100vh;
 }
 
-#sign_in, #register {
-  color: #1cca97;
-  text-decoration: none;
-  font-weight: bold;
+#hook {
+  margin-bottom: 20px;
 }
 
-#sign_in:hover, #register:hover{
-  color: #00976b;
-}
-
-#logo-text{
+#logo-text {
   font-size: 40px;
-  text-decoration: none;
-  color: #333;
   margin-left: 5px;
+}
+
+#logo-small {
+  margin-left: 30px;
+  margin-bottom: 15px;
 }
 
 #sign_out {
@@ -63,35 +46,23 @@ li {
   padding-right: 20px;
 }
 
-#sign_in {
-	font-size: 30px;
-	margin-left:20px;
-}
-
-#register {
-	font-size: 30px;
-	margin-left: 30px;
-}
-
-#logo-small {
-  margin-left: 30px;
-  margin-bottom: 15px;
-}
-
 #start-course {
   margin-top: 30%;
 }
 
-.navbar-item {
-  display: inline-block;
-  margin-bottom: 10px;
+.buttons {
+  margin-top: 5%;
+  text-align: center;
 }
 
 .container-box {
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius:10px;
-  margin-top: 20%;
+  margin-top: 22%;
   padding-bottom: 30px;
+}
+
+.course-buttons {
+  margin-top: 8%;
 }
 
 .course-header {
@@ -99,17 +70,18 @@ li {
   margin-bottom: 20px;
 }
 
-.course-buttons {
-  margin-top: 8%;
+.course-image {
+  width:80%;
+  height: 80%;
 }
 
-.course-provider-current {
-  font-family: 'Titillium Web', sans-serif;
-  color: #e8e8e8;
-}
 .course-name {
   color:#00976b;
   font-family: 'Titillium Web', sans-serif;
+}
+
+.course-name:hover {
+  color:#1cca97;
 }
 
 .course-name-current {
@@ -118,12 +90,6 @@ li {
 }
 .course-name-current:hover {
   color:#00976b;
-  text-decoration: none;
-}
-
-.course-tabs {
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 15px;
 }
 
 .course-provider {
@@ -131,14 +97,27 @@ li {
   color: #888;
 }
 
-.course-name:hover {
-  color:#1cca97;
-  text-decoration: none;
+.course-provider-current {
+  font-family: 'Titillium Web', sans-serif;
+  color: #e8e8e8;
 }
 
-.buttons {
-  margin-top: 5%;
-  text-align: center;
+.course-tabs {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+}
+
+.green-button {
+  background-color: #1cca97;
+  font-size: 24px;
+  font-family: 'Titillium Web', sans-serif;
+  min-width: 300px;
+  margin-top: 10px;
+}
+
+.green-button:hover {
+  color: #0A3C5C;
+  font-weight: bold;
 }
 
 .my-course-image {
@@ -148,14 +127,38 @@ li {
   margin-right: 15px;
 }
 
-.bigger-glyph {
+.glyph-bigger {
   font-size: 1.6em;
   color: #1cca97;
   margin-top: 40px;
 }
 
-.bigger-glyph-white{
+.glyph-bigger-white {
   font-size: 1.3em;
   color: #fff;
   margin-right: 3px;
 }
+
+.glyph-inactive {
+  color: #333;
+}
+
+.glyph-active {
+  color: #1cca97;
+  font-size:1.5em
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-item {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.well-green {
+  background-color: #1cca97;
+}
+
+
