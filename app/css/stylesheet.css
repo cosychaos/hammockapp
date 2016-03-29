@@ -155,6 +155,10 @@ li {
 .check-box {
   margin-top:22px;
 }
+
+.check-box-main {
+  margin-top:25px;
+}
 .checkbox-custom {
   width: 25px;
   position: relative;

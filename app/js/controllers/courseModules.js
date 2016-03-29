@@ -14,6 +14,17 @@ angular
         self.moduleName = "";
       };
 
+      self.markAllDone = function() {
+        if (self.selectedAll) {
+            self.selectedAll = true;
+        } else {
+            self.selectedAll = false;
+        }
+
+        angular.forEach(self.modules, function (module) {
+            module.done = self.selectedAll;
+        });
+      };
       // self.editModule = function(module){
 
       // };
