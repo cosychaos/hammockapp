@@ -5,11 +5,12 @@ angular
   .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
       var self = this;
       self.courseID = $routeParams.ID;
-
-      self.modules = [];
+      self.modules=[{text:"task 1", done:false}, {text: "task 2", done:true}];
 
       self.addNewModule = function() {
-        self.modules.push(self.moduleName);
+        self.modules.push({
+          text: self.moduleName,
+          done: false});
         self.moduleName = "";
       };
 
@@ -19,11 +20,10 @@ angular
       };
 
       self.hoverIn = function(){
-          self.hoverEdit = true;
+        self.hoverEdit = true;
       };
 
       self.hoverOut = function(){
-          self.hoverEdit = false;
+        self.hoverEdit = false;
       };
-
-  }]);
+}]);

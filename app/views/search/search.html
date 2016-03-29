@@ -9,7 +9,12 @@
   </ul>
   <div class="col-lg-6 col-md-offset-3">
     <form class="input-group" ng-submit="search.viewCourses()">
-      <input id="search" ng-model="search.searchTerm" type="text" class="form-control" placeholder="Search for courses...">
+      <input id="search" 
+             ng-model="search.searchTerm" 
+             type="text"
+             autofocus="autofocus" 
+             class="form-control" 
+             placeholder="Search for courses...">
       <span class="input-group-btn">
         <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">
           Go!

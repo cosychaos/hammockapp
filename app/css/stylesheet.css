@@ -80,6 +80,25 @@ li {
   text-align: center;
 }
 
+.btn-success {
+  background-color: #1cca97;
+  color: #EDFAF6;
+  font-size: 24px;
+  font-family: 'Titillium Web', sans-serif;
+  min-width: 300px;
+  margin-top: 10px;
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:hover,
+.btn-success.active:hover,
+.btn-success:active:focus{
+  background-color: #1cca97;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .container-box {
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: 22%;
@@ -133,24 +152,6 @@ li {
   float: right;
 }
 
-.btn-success {
-  background-color: #1cca97;
-  color: #EDFAF6;
-  font-size: 24px;
-  font-family: 'Titillium Web', sans-serif;
-  min-width: 300px;
-  margin-top: 10px;
-}
-
-.btn-success:hover,
-.btn-success:active,
-.btn-success:active:hover,
-.btn-success.active:hover,
-.btn-success:active:focus{
-  background-color: #1cca97;
-  color: #FFF;
-  font-weight: bold;
-}
 .check-box {
   margin-top:22px;
 }
@@ -195,6 +196,16 @@ li {
   opacity: 1;
 }
 
+.done-true {
+  text-decoration: line-through;
+  color: #9EA6A8; 
+ }
+ 
+.done-false {
+  text-decoration: none;
+  color: red; 
+ }
+ 
 .my-course-image {
   margin-top: 15%;
   max-width: 100px;
