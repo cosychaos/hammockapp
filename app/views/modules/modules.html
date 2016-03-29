@@ -13,37 +13,34 @@
                   <h2>To do:</h2>
                 </div>
               </div>
-              <input type="text" 
+              <input type="text"
                      autofocus="autofocus"
-                     class="form-control" 
-                     id="module-input" 
-                     ng-model="course.moduleName" 
+                     class="form-control"
+                     id="module-input"
+                     ng-model="course.moduleName"
                      placeholder="Enter new module">
             </form>
             <ul>
-               <li ng-repeat="module in course.modules" ng-mouseover="course.hoverIn()" ng-mouseleave="course.hoverOut()" ng-dblclick="course.toggleEditMode()">
+               <li ng-repeat="module in course.modules" ng-mouseover="course.hoverIn()" ng-mouseleave="course.hoverOut()" ng-dblclick="course.editMode = true">
                   <div class="row">
                     <div class="col-md-2 col-s-2 col-xs-2 check-box">
                       <div class="checkbox-custom">
                         <form>
-                         <div class="view" ng-keyup="course.editModule()">
                           <input type="checkbox" value="1" ng-model="module.done" id="{{$index}}" />
                           <label for="{{$index}}"></label>
-                          </div>
-                          <input class="edit" type="text" ng-model="module.text" ng-keyup="course.editModule(module)"/>
                         </form>
                       </div>
                     </div>
                     <div class="col-md-7 col-s-8 col-xs-8">
-                        <h3 ng-class="{'done-true': module.done, 'done-false': !module.done}">
+                        <h3 ng-class="{'done-true': module.done, 'done-false': !module.done}" ng-hide="course.editMode">
                           {{module.text}} | {{module.done}}
                         </h3>
+                        <form ng-show="course.editMode" ng-submit="course.editModule(module)">
+                          <input type="text" ng-model="module.text"/>
+                        </form>
                     </div>
                     <div class="col-md-3 col-s-3 col-xs-3">
                       <span ng-show="course.hoverEdit" class="animate-show">
-                        <a class="edit-module" id="edit-module">
-                          <span class="glyphicon glyphicon-pencil glyph-bigger"></span>
-                        </a>
                         <a class="remove" ng-click="course.deleteModule(module)">
                           <span class="glyphicon glyphicon-trash glyph-bigger"></span>
                         </a>

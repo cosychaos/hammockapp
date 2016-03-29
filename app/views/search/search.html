@@ -1,19 +1,11 @@
 <div class="container-fluid">
-  <ul class="nav nav-pills">
-    <li role="presentation">
-      <a href="#/mycourses" id="my-courses">My Courses</a>
-    </li>
-    <li role="presentation">
-      <a href="#/search" id="add-courses">Add Courses</a>
-    </li>
-  </ul>
   <div class="col-lg-6 col-md-offset-3">
     <form class="input-group" ng-submit="search.viewCourses()">
-      <input id="search" 
-             ng-model="search.searchTerm" 
+      <input id="search"
+             ng-model="search.searchTerm"
              type="text"
-             autofocus="autofocus" 
-             class="form-control" 
+             autofocus="autofocus"
+             class="form-control"
              placeholder="Search for courses...">
       <span class="input-group-btn">
         <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">
@@ -39,7 +31,7 @@
             <a ng-click="create.addCourse({id: result.id})">
               <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty" ng-class="myVar"></span>
             </a>
-            <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default"> 
+            <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default">
               Enroll
             </button>
           </div>

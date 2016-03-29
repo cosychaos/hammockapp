@@ -4,6 +4,8 @@ angular
   .module('Hammock')
   .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
       var self = this;
+      var editMode = false;
+
       self.courseID = $routeParams.ID;
       self.modules=[{id: 0, text:"task 1", done:false}, {id: 1, text: "task 2", done:true}];
 
@@ -26,14 +28,8 @@ angular
         });
       };
 
-      self.toggleEditMode = function(){
-          $(event.target).closest('li').toggleClass('editing');
-      };
-      
       self.editModule = function(module){
-        if(event.keyCode == 13 && todo.text){
-          self.toggleEditMode();
-        }
+        self.editMode = false;
       };
 
       self.deleteModule = function(module){
