@@ -54,7 +54,7 @@ li {
 
 #navigation {
   display:inline;
-  background-color: red;
+  margin-top:10px;
 }
 
 #start-course {
@@ -202,14 +202,14 @@ li {
 
 .done-true {
   text-decoration: line-through;
-  color: #9EA6A8; 
+  color: #9EA6A8;
  }
- 
+
 .done-false {
   text-decoration: none;
-  color: #0A3C5C; 
+  color: #0A3C5C;
  }
- 
+
 .my-course-image {
   margin-top: 15%;
   max-width: 100px;
