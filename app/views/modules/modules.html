@@ -17,12 +17,12 @@
                       <div class="checkbox-custom">
                         <form>
                           <input type="checkbox" value="1" ng-model="module.done" id="{{$index}}" />
-                          <label for="{{$index}}" ng-class="{'done-true': module.done, 'done-false': !module.done}"></label>
+                          <label for="{{$index}}"></label>
                         </form>
                       </div>
                     </div>
                     <div class="col-md-7 col-s-8 col-xs-8">
-                        <h3>{{module.text}} | {{module.done}}</h3>
+                        <h3 ng-class="{'done-true': module.done, 'done-false': !module.done}">{{module.text}} | {{module.done}}</h3>
                     </div>
                     <div class="col-md-3 col-s-3 col-xs-3">
                       <span ng-show="course.hoverEdit" class="animate-show">
