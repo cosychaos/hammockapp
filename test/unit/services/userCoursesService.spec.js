@@ -64,6 +64,27 @@ describe ('userCoursesService', function(){
 
   });
 
+  describe ('deleteCourse', function(){
+
+    beforeEach(inject(function($httpBackend){
+      httpBackend = $httpBackend;
+      httpBackend.expectDELETE("http://localhost:3000/courses/1").respond(204, {});
+      httpBackend.expectGET("views/main.html").respond("fine");
+    }));
+
+    it ('returns a status code of 204', function(){
+      courseService.deleteCourse(courseToDelete)
+        .then(function(response){
+          expect(response.status).toEqual(204);
+        });
+      httpBackend.flush();
+    });
+
+
+
+
+  });
+
 });
 
 
@@ -94,6 +115,10 @@ describe ('userCoursesService', function(){
                 "id": "1",
                 "status": "completed"
               };
+
+  var courseToDelete = {
+                "id": "1",
+  };
 
   var courses = [{
     "name": "The joy of physics",
