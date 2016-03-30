@@ -30,6 +30,11 @@
         controller: 'UserCoursesCtrl',
         controllerAs: 'userCoursesCtrl'
       })
+      .when('/mycourses/:ID/modules', {
+        templateUrl: 'views/modules/modules.html',
+        controller:'CourseModulesCtrl',
+        controllerAs: 'course'
+      })
       .when('/search', {
         templateUrl: 'views/search/search.html',
         controller: 'SearchCtrl',

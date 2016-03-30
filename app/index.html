@@ -3,33 +3,41 @@
 <head>
   <meta charset='utf-8'>
 	<title>Hammock</title>
-	<link rel="stylesheet" type="text/css" href='bower_components/bootstrap/dist/css/bootstrap.css'>
-	<link rel="stylesheet" type="text/css" href='css/stylesheet.css'>
+  <!-- Styling -->
+  <link rel="stylesheet" type="text/css" href='bower_components/bootstrap/dist/css/bootstrap.css'>
+  <link rel="stylesheet" type="text/css" href='css/stylesheet.css'>
 	<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+  <!-- Angular -->
 	<script src='bower_components/angular/angular.js'></script>
+  <script src='bower_components/angular-animate/angular-animate.js'></script>
+  <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+  <script src='bower_components/angular-cookies/angular-cookies.js'></script>
   <script src='bower_components/angular-resource/angular-resource.js'></script>
   <script src='bower_components/angular-route/angular-route.js'></script>
-  <script src='bower_components/angular-animate/angular-animate.js'></script>
-  <script src='bower_components/angular-cookies/angular-cookies.js'></script>
-  <script src="bower_components/angular-cookie/angular-cookie.js"></script>
   <script src='bower_components/ng-token-auth/dist/ng-token-auth.js'></script>
   <script src="js/app.js"></script>
+  <!-- Controllers -->
+  <script src="js/controllers/courseModules.js"></script>
+  <script src="js/controllers/createCourse.js"></script>
+  <script src="js/controllers/search.js"></script>
   <script src="js/controllers/user_sessions.js"></script>
   <script src="js/controllers/user_registrations.js"></script>
   <script src="js/controllers/user_courses.js"></script>
-  <script src="js/controllers/createCourse.js"></script>
-  <script src="js/controllers/search.js"></script>
+  <!-- Services -->
   <script src="js/services/userCoursesService.js"></script>
   <script src="js/services/SearchService.js"></script>
-  <script src="js/services/courseModulesService.js"></script>
 </head>
 <body ng-app="Hammock">
   <nav class="navbar navbar-default">
     <img id="logo-small" class="navbar-item" src="assets/logo.png" alt="Hammock Logo" style="width:40px;height:40px;">
     <a href="#/" id="logo-text" class="navbar-item">Hammock</a>
-    <li id="sign_out" class="navbar-item" ng-show="user.id"><a ng-click='signOut()' href="#/" >Sign out</a></li>
-  </nav>
+    <ul id="navigation" class="nav nav-pills pull-right" ng-show="user.id">
+      <li role="presentation"><a href="#/mycourses" id="my-courses" class="course-tabs">My Courses</a></li>
+      <li role="presentation"><a href="#/search" id="add-courses" class="course-tabs">Add Courses</a></li>
+      <li role="presentation"><a ng-click='signOut()' id="sign_out" href="#/" class="course-tabs">Sign out</a></li>
+    </ul>
+    </nav>
 	<div ng-view></div>
 </body>
 </html>

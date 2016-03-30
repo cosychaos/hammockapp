@@ -1,4 +1,4 @@
-xdescribe('User course page', function() {
+describe('User course page', function() {
 	var helper = require('./helper.js');
 
 	beforeEach(function() {

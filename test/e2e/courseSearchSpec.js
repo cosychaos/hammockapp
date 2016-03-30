@@ -1,4 +1,4 @@
-xdescribe('Search', function(){
+describe('Search', function(){
   var helper = require('./helper.js');
 
   beforeEach(function() {

@@ -1,8 +1,8 @@
 <div class="container-fluid">
-	<ul class="nav nav-pills">
+<!-- 	<ul class="nav nav-pills">
 	  <li role="presentation"><a href="#/mycourses" id="my-courses" class="course-tabs">My Courses</a></li>
 	  <li role="presentation"><a href="#/search" id="add-courses" class="course-tabs">Add Courses</a></li>
-	</ul>
+	</ul> -->
 	<div class="row">
 		<div id="interested" class="col-xs-12 col-md-4 text-center course-header">
 			<h3>Interesting Courses</h3>
@@ -17,7 +17,7 @@
 							<h5 class="course-provider">{{course.provider}}</h5>
 						</div>
 							<div class="col-md-2 col-s-3 col-xs-4 update-course">
-								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-play bigger-glyph"></span></a>
+								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-play glyph-bigger"></span></a>
 							</div>
 						</div>
 					</li>
@@ -27,21 +27,20 @@
 			<div id="current" class="col-xs-12 col-md-4 text-center course-header">
 				<h3>Current Courses</h3>
 				<ul>
-					<li class="current well well-green" ng-repeat="course in userCoursesCtrl.courses[1]">
-					<div class="row">
-						<div class="col-md-3 col-s-5 col-xs-8">
-						 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+					<li class="current well-green well" ng-repeat="course in userCoursesCtrl.courses[1]">
+						<div class="row">
+							<div class="col-md-3 col-s-5 col-xs-8">
+							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+							</div>
+							<div class="col-md-7 col-s-5 col-xs-5">
+								 <a ng-href="{{course.url}}" class="course-name-current"><h4>{{course.name}}</h4></a>
+								 <h5 class="course-provider-current">{{course.provider}}</h5>
+							</div>
+							<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
+								<a href="#/mycourses/{{course.id}}/modules" id="plan"><span class="glyphicon glyphicon-th-list glyph-bigger-white"></span></a>
+								<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok glyph-bigger-white"></span></a>
+							</div>
 						</div>
-						<div class="col-md-7 col-s-5 col-xs-5">
-							 <a ng-href="{{course.url}}" class="course-name-current"><h4>{{course.name}}</h4></a>
-							 <h5 class="course-provider-current">{{course.provider}}</h5>
-						</div>
-						<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
-							<a href="#/mycourses"><span class="glyphicon glyphicon-th-list bigger-glyph-white"></span></a>
-							<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok bigger-glyph-white"></span></a>
-						</div>
-					</div>
-					</li>
 					</li>
 				</ul>
 			</div>

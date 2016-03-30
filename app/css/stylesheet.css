@@ -1,35 +1,31 @@
-h1, #logo-text{
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:active:hover,
+a.active:hover,
+a:active:focus {
+  text-decoration: none;
+}
+
+h1, h2, #logo-text, #hook {
 	font-family: 'Amaranth', sans-serif;
+  color: #0A3C5C;
 }
 
 h1 {
   font-size: 70px;
-  opacity: 1;
+}
+
+h3 {
+  font-family: 'Titillium Web', sans-serif;
+  color: #0A3C5C;
 }
 
 li {
   list-style: none;
-}
-.navbar {
-  margin-bottom: 0;
-}
-
-.well-green {
-  background-color: #1cca97;
-}
-
-.inactive-glyph {
-  color: #333;
-}
-
-.active-glyph {
-  color: #1cca97;
-  font-size:1.5em
-}
-
-.course-image{
-  width:80%;
-  height: 80%;
 }
 
 #background {
@@ -39,105 +35,180 @@ li {
   height:100vh;
 }
 
-#sign_in, #register {
-  color: #1cca97;
-  text-decoration: none;
-  font-weight: bold;
+#hook {
+  margin-bottom: 20px;
 }
 
-#sign_in:hover, #register:hover{
-  color: #00976b;
-}
-
-#logo-text{
+#logo-text {
   font-size: 40px;
-  text-decoration: none;
-  color: #333;
   margin-left: 5px;
 }
 
-#sign_out {
-  float:right;
-  color: #333;
-  padding-right: 20px;
-}
-
-#sign_in{
-	font-size: 30px;
-	margin-left:20px;
-}
-
-#register{
-	font-size: 30px;
-	margin-left: 30px;
-}
-
-#logo-small{
+#logo-small {
   margin-left: 30px;
   margin-bottom: 15px;
 }
+#module-input{
+  margin-top: 20px;
+}
 
-#start-course{
+#navigation {
+  display:inline;
+  margin-top:10px;
+}
+
+#start-course {
   margin-top: 30%;
 }
 
-.navbar-item {
-  display: inline-block;
-  margin-bottom: 10px;
+.animate-show {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    opacity: 1;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    display: inline-block !important;
+}
+.animate-show.ng-hide {
+    opacity: 0;
+}
+
+.buttons {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.btn-success {
+  background-color: #1cca97;
+  color: #EDFAF6;
+  font-size: 24px;
+  font-family: 'Titillium Web', sans-serif;
+  min-width: 300px;
+  margin-top: 10px;
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:hover,
+.btn-success.active:hover,
+.btn-success:active:focus{
+  background-color: #1cca97;
+  color: #FFF;
+  font-weight: bold;
 }
 
 .container-box {
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius:10px;
-  margin-top: 20%;
+  margin-top: 22%;
   padding-bottom: 30px;
-}
-
-.course-header{
-  font-family: 'Titillium Web', sans-serif;
-  margin-bottom: 20px;
 }
 
 .course-buttons {
   margin-top: 8%;
 }
 
-.course-provider-current{
+.course-header {
   font-family: 'Titillium Web', sans-serif;
-  color: #e8e8e8;
+  margin-bottom: 20px;
 }
+
+.course-image {
+  width:80%;
+  height: 80%;
+}
+
 .course-name {
   color:#00976b;
   font-family: 'Titillium Web', sans-serif;
 }
 
-.course-name-current{
+.course-name:hover {
+  color:#1cca97;
+}
+
+.course-name-current {
   color:#fff;
   font-family: 'Titillium Web', sans-serif;
 }
 .course-name-current:hover {
   color:#00976b;
-  text-decoration: none;
 }
 
-.course-tabs{
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 15px;
-}
-
-.course-provider{
+.course-provider {
   font-family: 'Titillium Web', sans-serif;
   color: #888;
 }
 
-.course-name:hover {
-  color:#1cca97;
+.course-provider-current {
+  font-family: 'Titillium Web', sans-serif;
+  color: #e8e8e8;
+}
+
+.course-tabs {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+  float: right;
+}
+
+.check-box {
+  margin-top:22px;
+}
+
+.check-box-main {
+  margin-top:25px;
+}
+.checkbox-custom {
+  width: 25px;
+  position: relative;
+}
+
+.checkbox-custom label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border:1px solid #ddd;
+}
+
+.checkbox-custom label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  background: transparent;
+  top: 6px;
+  left: 6px;
+  border: 3px solid #1cca97;
+  border-top: none;
+  border-right: none;
+
+  transform: rotate(-45deg);
+}
+
+.checkbox-custom label:hover::after {
+  opacity: 0.5;
+}
+
+.checkbox-custom input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: #9EA6A8;
+ }
+
+.done-false {
   text-decoration: none;
-}
-.buttons {
-  margin-top: 5%;
-  text-align: center;
-}
+  color: #0A3C5C;
+ }
 
 .my-course-image {
   margin-top: 15%;
@@ -146,14 +217,59 @@ li {
   margin-right: 15px;
 }
 
-.bigger-glyph{
-  font-size: 1.6em;
+.glyph-bigger {
+  font-size: 1.3em;
   color: #1cca97;
-  margin-top: 40px;
+  margin-top: 22px;
 }
 
-.bigger-glyph-white{
+.glyph-bigger-white {
   font-size: 1.3em;
   color: #fff;
   margin-right: 3px;
 }
+
+.glyph-inactive {
+  color: #333;
+}
+
+.glyph-active {
+  color: #1cca97;
+  font-size:1.5em
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li .edit {
+    display: none;
+}
+li.editing {
+  border-bottom: 1px solid #778899;
+}
+
+li.editing .view {
+  display: none;
+}
+li.editing .edit {
+  display: block;
+  width: 444px;
+  padding: 13px 15px 14px 20px;
+  margin: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-item {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.well-green {
+  background-color: #1cca97;
+}
+
+
