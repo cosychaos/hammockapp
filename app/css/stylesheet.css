@@ -272,4 +272,7 @@ li.editing .edit {
   background-color: #1cca97;
 }
 
-
+.thumbnail {
+  height: 75px;
+  width: 75px;
+}
