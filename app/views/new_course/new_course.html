@@ -1,0 +1,47 @@
+  <div class="container-fluid">
+    <div class= "text-center col-md-4 col-md-offset-4">
+      <div class="row margin-top-20">
+        <h2>New course</h2>
+          <form id="submit-login" ng-submit="create.createCourse()" role="form">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <input type="name"
+                       name="name"
+                       autofocus="autofocus"
+                       id="email"
+                       ng-model="create.courseName"
+                       required="required"
+                       class="form-control"
+                       placeholder="Course Name">
+              </div>
+              <div class="form-group">
+                <input type="url"
+                       name="course-url"
+                       autofocus="autofocus"
+                       id="course-url"
+                       ng-model="create.courseUrl"
+                       required="required"
+                       class="form-control"
+                       placeholder="Course URL">
+              </div>
+              <div class="form-group">
+                <input type="url"
+                       name="image-url"
+                       id="image-url"
+                       ng-model="create.imageUrl"
+                       class="form-control"
+                       placeholder="Image URL">
+              </div>
+            <div>
+               <button id="submit" type="submit" class="btn btn-success-small" id="sign_in">
+                Add
+              </button>
+              <div class="alert alert-danger" role="alert" ng-show="error">
+                {{error}}
+              </div>
+            </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>

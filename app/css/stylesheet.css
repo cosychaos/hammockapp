@@ -89,6 +89,14 @@ li {
   margin-top: 10px;
 }
 
+.btn-success-small {
+  background-color: #1cca97;
+  color: #EDFAF6;
+  font-size: 18px;
+  font-family: 'Titillium Web', sans-serif;
+  min-width: 100px;
+  margin-top: 10px;
+}
 .btn-success:hover,
 .btn-success:active,
 .btn-success:active:hover,
@@ -252,6 +260,7 @@ li.editing {
 li.editing .view {
   display: none;
 }
+
 li.editing .edit {
   display: block;
   width: 444px;
@@ -259,6 +268,9 @@ li.editing .edit {
   margin: 0;
 }
 
+.margin-top-20 {
+  margin-top: 20px;
+}
 .navbar {
   margin-bottom: 0;
 }
