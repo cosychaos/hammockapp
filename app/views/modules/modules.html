@@ -18,14 +18,14 @@
                     <div class="col-md-2 col-s-2 col-xs-2 check-box">
                       <div class="checkbox-custom">
                         <form>
-                          <input type="checkbox" value="1" ng-model="module.complete" id="{{$index}}" />
+                          <input type="checkbox" value="1" ng-model="module.complete" ng-click="course.editModule(module)" id="{{$index}}" />
                           <label for="{{$index}}"></label>
                         </form>
                       </div>
                     </div>
                     <div class="col-md-7 col-s-8 col-xs-8">
                         <h3 ng-class="{'done-true': module.complete, 'done-false': !module.complete}" ng-hide="course.editMode">
-                          {{module.title}}
+                          {{module.title}} | {{module.complete}}
                         </h3>
                         <form ng-show="course.editMode" ng-submit="course.editModule(module)">
                           <input type="text" class="form-control" ng-model="module.title"/>

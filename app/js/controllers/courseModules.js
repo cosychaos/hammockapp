@@ -21,12 +21,13 @@ angular
       self.editModule = function(module){
         self.editMode = false;
         CourseModulesService.updateModule(module);
-        viewModules();
       };
 
       self.deleteModule = function(module){
-        CourseModulesService.deleteModule(module);
-        viewModules();
+        CourseModulesService.deleteModule(module).then(
+          function() {
+            viewModules();
+          });
       };
 
       var requestModules = CourseModulesService.getModules(self.courseID);
