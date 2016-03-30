@@ -19,7 +19,7 @@ h1 {
   font-size: 70px;
 }
 
-h3 {
+h3, h4, h5 {
   font-family: 'Titillium Web', sans-serif;
   color: #0A3C5C;
 }
@@ -57,6 +57,11 @@ li {
   margin-top:10px;
 }
 
+#search {
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
 #start-course {
   margin-top: 30%;
 }
@@ -88,7 +93,14 @@ li {
   min-width: 300px;
   margin-top: 10px;
 }
-
+.btn-success-small {
+  background-color: #1cca97;
+  color: #EDFAF6;
+  font-size: 18px;
+  font-family: 'Titillium Web', sans-serif;
+  min-width: 100px;
+  margin-top: 10px;
+}
 .btn-success:hover,
 .btn-success:active,
 .btn-success:active:hover,
@@ -115,8 +127,9 @@ li {
 }
 
 .course-image {
-  width:80%;
-  height: 80%;
+  width:110%;
+  height: 110%;
+  margin-top: 20px;
 }
 
 .course-name {
@@ -266,6 +279,10 @@ li.editing .edit {
 .navbar-item {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.search-buttons {
+  margin-top:40px;
 }
 
 .well-green {

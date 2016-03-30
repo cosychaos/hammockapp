@@ -21,13 +21,16 @@
           </div>
           <div class="col-md-7 col-s-5 col-xs-5">
             <a ng-href="{{result.url}}" class="result-name">
-              {{result.name}}
+              <h3>{{result.name}}</h3>
             </a>
             <p class="result-provider">
-              {{result.provider}}
+              <h4>{{result.provider}}</h4>
             </p>
+            <h5 class="result-description">
+              {{result.description.substring(0, 300);}}...
+            </h5>
           </div>
-          <div class="col-md-2 col-s-2 col-xs-2">
+          <div class="col-md-2 col-s-2 col-xs-2 search-buttons">
             <a ng-click="create.addCourse({id: result.id})">
               <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty" ng-class="myVar"></span>
             </a>
@@ -38,5 +41,17 @@
         </div>
       </li>
     </ul>
+    <div ng-show="search.searchMode">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-lg-4 col-lg-offset-2">
+            <h4>Can't find the course you're looking for?</h4>
+          </div>
+          <div class="col-lg-4">
+            <button id="submit" type="submit" class="btn btn-success-small">Add course</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
