@@ -20,7 +20,12 @@ angular
 
       self.editModule = function(module){
         self.editMode = false;
-        CourseModulesService.editModule(module);
+        CourseModulesService.updateModule(module);
+        viewModules();
+      };
+
+      self.deleteModule = function(module){
+        CourseModulesService.deleteModule(module);
         viewModules();
       };
 
