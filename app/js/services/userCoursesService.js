@@ -47,6 +47,7 @@
           url: apiEndPoint + "/" + course.id,
           method: 'DELETE',
           data: data,
+          headers: {'Content-Type': 'application/json'}
         }).then(function(response){
           return response;
         });
