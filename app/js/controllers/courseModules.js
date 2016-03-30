@@ -2,7 +2,7 @@
 
 angular
   .module('Hammock')
-  .controller('CourseModulesCtrl', ['$routeParams', 'CalendarService', function ($routeParams, CalendarService) {
+  .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
       var self = this;
       var editMode = false;
 
@@ -44,4 +44,5 @@ angular
       self.hoverOut = function(){
         self.hoverEdit = false;
       };
+
 }]);

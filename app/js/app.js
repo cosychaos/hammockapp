@@ -35,6 +35,11 @@
         controller:'CourseModulesCtrl',
         controllerAs: 'course'
       })
+			.when('/mycourses/:ID/modules/addtocalendar', {
+        templateUrl: 'views/modules/calendar_event.html',
+        controller:'CalendarController',
+        controllerAs: 'calendar'
+      })
       .when('/search', {
         templateUrl: 'views/search/search.html',
         controller: 'SearchCtrl',
@@ -57,5 +62,9 @@
     	$location.path('/mycourses');
   	});
 	}]);
+
+	var init = function() {
+  	window.initGapi();
+	};
 
 }());

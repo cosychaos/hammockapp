@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <div class= "text-center col-md-4 col-md-offset-4 container-box">
+    <div class="row">
+        <form id="submit-event" ng-submit="" role="form">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="name"
+                     name="name"
+                     autofocus="autofocus"
+                     id="event-name"
+                     ng-model="calendar.title"
+                     required="required"
+                     class="form-control"
+                     placeholder="Untitled Module">
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <span class="label label-default">Start</span>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <input type="date"
+                         name="date"
+                         id="start-date"
+                         ng-model="calendar.startDate"
+                         required="required"
+                         class="form-control">
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <input type="time"
+                         name="time"
+                         id="start-time"
+                         ng-model="calendar.startTime"
+                         required="required"
+                         class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <span class="label label-default">End</span>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <input type="date"
+                           name="date"
+                           id="end-date"
+                           ng-model="calendar.endDate"
+                           required="required"
+                           class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <input type="time"
+                           name="time"
+                           id="end-time"
+                           ng-model="calendar.endTime"
+                           required="required"
+                           class="form-control">
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="row">
+             <button id="submit" type="submit" class="btn btn-success green-button" ng-click="calendar.apiCall()">
+              Submit to Calendar
+            </button>
+            <div class="alert alert-danger" role="alert" ng-show="error">
+              {{error}}
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>

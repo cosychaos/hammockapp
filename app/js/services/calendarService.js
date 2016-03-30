@@ -22,12 +22,12 @@
       gapi.auth.authorize({ client_id: clientId, scope: scopes, immediate: true }, handleAuthResult);
     };
 
-    self.makeApiCall = function(lesson, start, end){
+    self.makeApiCall = function(title, start, end){
       gapi.client.load('calendar', 'v3', function () { // load the calendar api (version 3)
         var request = gapi.client.calendar.events.insert
         ({'calendarId': 'primary',
         // calendar ID which id of Google Calendar where you are creating events. this can be copied from your Google Calendar user view
-          "resource": { "summary": lesson,
+          "resource": { "summary": title,
                         "start": {
                           "dateTime": start
                         },
