@@ -1,4 +1,4 @@
-describe('User course page', function() {
+xdescribe('User course page', function() {
 	var helper = require('./helper.js');
 
 	beforeEach(function() {
@@ -25,7 +25,7 @@ describe('User course page', function() {
 
 			expect($('#current').getText()).toContain('Current Courses');
 			var firstCurrent = element.all(by.css('.current')).first();
-			expect(firstCurrent.element(by.css('.course-name')).getText()).toContain('The joy of maths');
+			expect(firstCurrent.element(by.css('.course-name-current')).getText()).toContain('The joy of maths');
 
 
 			expect($('#completed').getText()).toContain('Completed Courses');

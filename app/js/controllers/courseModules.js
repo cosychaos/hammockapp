@@ -1,8 +1,9 @@
 'use strict'
 
+
 angular
   .module('Hammock')
-  .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
+  .controller('CourseModulesCtrl', ['$routeParams','CourseModulesService', '$timeout', function ($routeParams, CourseModulesService, $timeout) {
       var self = this;
       var editMode = false;
 
@@ -10,31 +11,37 @@ angular
       self.modules=[];
 
       self.addNewModule = function() {
-        self.modules.push({
-          text: self.moduleName,
-          done: false});
+        var module = {
+          title: self.moduleName,
+          complete: false}
+        CourseModulesService.createModule(module, self.courseID)
+          .then(viewModules);
         self.moduleName = "";
-      };
-
-      self.markAllDone = function() {
-        if (self.selectedAll) {
-            self.selectedAll = true;
-        } else {
-            self.selectedAll = false;
-        }
-
-        angular.forEach(self.modules, function (module) {
-            module.done = self.selectedAll;
-        });
       };
 
       self.editModule = function(module){
         self.editMode = false;
+        CourseModulesService.updateModule(module)
+          .then(viewModules);
       };
 
       self.deleteModule = function(module){
-        var index = self.modules.indexOf(module);
-        self.modules.splice(index, 1);
+        CourseModulesService.deleteModule(module)
+          .then(viewModules);
+      };
+
+      var requestModules = function() {
+        return CourseModulesService.getModules(self.courseID);
+      }
+
+      var resetModules = function(){
+        self.modules = [];
+      };
+
+      var viewModules = function() {
+        requestModules().then(function(modules){
+          self.modules = modules;
+        });
       };
 
       self.hoverIn = function(){
@@ -44,4 +51,7 @@ angular
       self.hoverOut = function(){
         self.hoverEdit = false;
       };
+
+      viewModules();
+
 }]);

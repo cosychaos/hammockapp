@@ -8,13 +8,13 @@ angular
     self.courses = [[],[],[]];
 
     self.updateCourse = function(courseToUpdate){
-      UserCoursesService.updateCourse(courseToUpdate, function(){
-        viewCourses();
-      });
-    };
+      UserCoursesService.updateCourse(courseToUpdate).then(viewCourses);
+      };
 
-
-    var requestCourses = UserCoursesService.getMyCourses();
+    var requestCourses = function() {
+      return UserCoursesService.getMyCourses();
+      console.log("request sent");
+    }
 
     var sortCourses = function(courses){
       for (var i = 0; i < courses.length; i++) {
@@ -34,7 +34,7 @@ angular
 
     var viewCourses = function() {
       resetCourses();
-      requestCourses.then(function(courses){
+      requestCourses().then(function(courses){
         sortCourses(courses);
       });
     };
