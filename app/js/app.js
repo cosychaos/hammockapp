@@ -25,6 +25,11 @@
         controller: 'UserRegistrationsCtrl',
         controllerAs: 'userRegistrationsCtrl'
       })
+      .when('/newcourse', {
+        templateUrl: 'views/user_courses/new_course.html',
+        controller: 'SubmitCourseCtrl',
+        controllerAs: 'submit'
+      })
       .when('/mycourses', {
         templateUrl: 'views/user_courses/my_courses.html',
         controller: 'UserCoursesCtrl',
