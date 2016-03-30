@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-7 col-s-8 col-xs-8">
                         <h3 ng-class="{'done-true': module.done, 'done-false': !module.done}" ng-hide="course.editMode">
-                          {{module.text}} | {{module.done}}
+                          {{module.text}}
                         </h3>
                         <form ng-show="course.editMode" ng-submit="course.editModule(module)">
                           <input type="text" ng-model="module.text"/>

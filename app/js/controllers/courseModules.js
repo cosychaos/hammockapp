@@ -7,7 +7,7 @@ angular
       var editMode = false;
 
       self.courseID = $routeParams.ID;
-      self.modules=[{id: 0, text:"task 1", done:false}, {id: 1, text: "task 2", done:true}];
+      self.modules=[];
 
       self.addNewModule = function() {
         self.modules.push({
