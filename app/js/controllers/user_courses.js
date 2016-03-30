@@ -8,10 +8,7 @@ angular
     self.courses = [[],[],[]];
 
     self.updateCourse = function(courseToUpdate){
-      UserCoursesService.updateCourse(courseToUpdate).then(
-        function() {
-          viewCourses();
-        });
+      UserCoursesService.updateCourse(courseToUpdate).then(viewCourses);
       };
 
     var requestCourses = function() {

@@ -10,7 +10,8 @@
                      class="form-control"
                      id="module-input"
                      ng-model="course.moduleName"
-                     placeholder="Enter new module">
+                     placeholder="Enter new module"
+                     required>
             </form>
             <ul>
                <li ng-repeat="module in course.modules" ng-mouseover="course.hoverIn()" ng-mouseleave="course.hoverOut()" ng-dblclick="course.editMode = true">

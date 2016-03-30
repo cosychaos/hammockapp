@@ -15,4 +15,14 @@ describe('CourseModuleCtrl', function(){
     });
   });
 
+  beforeEach(inject(function($httpBackend){
+    httpBackend = $httpBackend;
+    httpBackend.expectGET("views/main.html").respond("fine");
+}));
+
+
+  it("initializes with empty modules", function(){
+    scope.$apply();
+    expect(ctrl.modules.length).toEqual(0);
+  });
 });

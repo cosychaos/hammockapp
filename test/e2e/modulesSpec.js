@@ -13,4 +13,6 @@ xdescribe('Course modules', function(){
     expect(browser.getCurrentUrl()).toContain('modules');
     });
   });
+
+  
 });
