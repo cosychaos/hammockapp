@@ -2,7 +2,7 @@
 
 angular
   .module('Hammock')
-  .controller('CourseModulesCtrl', ['$routeParams', function ($routeParams) {
+  .controller('CourseModulesCtrl', ['$routeParams', 'CalendarService', function ($routeParams, CalendarService) {
       var self = this;
       var editMode = false;
 
