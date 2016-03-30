@@ -1,4 +1,4 @@
-describe('Course modules', function(){
+xdescribe('Course modules', function(){
   var helper = require('./helper.js');
 
   beforeEach(function() {
