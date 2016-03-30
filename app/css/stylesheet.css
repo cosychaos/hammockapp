@@ -127,8 +127,8 @@ li {
 }
 
 .course-image {
-  width:110%;
-  height: 110%;
+  max-width:250px;
+  max-height: 250px;
   margin-top: 20px;
 }
 
@@ -223,12 +223,11 @@ li {
   color: #0A3C5C;
  }
 
-.my-course-image {
-  margin-top: 15%;
-  max-width: 100px;
-  max-height: 80px;
-  margin-right: 15px;
+.glyph-big {
+  font-size: 2em;
+  color: #0A3C5C;
 }
+
 
 .glyph-bigger {
   font-size: 1.3em;
@@ -248,7 +247,7 @@ li {
 
 .glyph-active {
   color: #1cca97;
-  font-size:1.5em
+  font-size:2.2em
 }
 
 li:last-child {
@@ -258,6 +257,7 @@ li:last-child {
 li .edit {
     display: none;
 }
+
 li.editing {
   border-bottom: 1px solid #778899;
 }
@@ -265,6 +265,7 @@ li.editing {
 li.editing .view {
   display: none;
 }
+
 li.editing .edit {
   display: block;
   width: 444px;
@@ -281,8 +282,20 @@ li.editing .edit {
   margin-bottom: 10px;
 }
 
+.my-course-image {
+  margin-top: 15%;
+  max-width: 100px;
+  max-height: 80px;
+  margin-right: 15px;
+}
+
 .search-buttons {
-  margin-top:40px;
+  margin-top: 30px;
+}
+
+.result-description, .result-provider, .result-name  {
+  padding-left:15px;
+  padding-right:15px;
 }
 
 .well-green {
