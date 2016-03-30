@@ -19,10 +19,10 @@
         });
     };
 
-    self.createModule = function(course_module){
+    self.createModule = function(course_module, courseId){
       var data = JSON.stringify({"course_module": course_module});
       return $http({
-          url: apiCoursesEndPoint + course_module.course_id + '/course_modules',
+          url: apiCoursesEndPoint + courseId + '/course_modules',
           method: 'POST',
           data: data,
           headers: {'Content-Type': 'application/json'}
@@ -42,9 +42,6 @@
           return response.data;
         });
     };
-
-
-
 
 
     });

@@ -13,7 +13,6 @@ angular
       });
     };
 
-
     var requestCourses = UserCoursesService.getMyCourses();
 
     var sortCourses = function(courses){

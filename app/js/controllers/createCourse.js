@@ -8,5 +8,4 @@ angular
     self.addCourse = function(courseToAdd){
       UserCoursesService.addToMyCourses(courseToAdd);
     };
-
 }]);
