@@ -131,6 +131,7 @@ li {
 .course-name-current {
   color:#fff;
   font-family: 'Titillium Web', sans-serif;
+  padding: 0px 5px 0px 5px;
 }
 .course-name-current:hover {
   color:#00976b;
@@ -273,6 +274,7 @@ li.editing .edit {
 }
 
 .thumbnail {
-  height: 75px;
-  width: 75px;
+  margin-top: 25px;
+  max-height: 80px;
+  max-width: 90px;
 }
