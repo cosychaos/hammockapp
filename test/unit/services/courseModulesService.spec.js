@@ -34,7 +34,7 @@ describe ('CourseModulesService', function(){
     }));
 
     it ('returns a JSON object of the resource submitted', function(){
-      courseModulesService.createModule(course_module)
+      courseModulesService.createModule(course_module, 1)
         .then(function(response){
           expect(response).toEqual(course_module);
         });

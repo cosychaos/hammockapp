@@ -8,18 +8,19 @@ angular
       var editMode = false;
 
       self.courseID = $routeParams.ID;
-      self.modules=[];
+      self.modules = [];
 
-      self.addNewModule = function() {
+      self.addModule = function() {
         var module = {
           title: self.moduleName,
-          complete: false}
+          complete: false
+        };
         CourseModulesService.createModule(module, self.courseID)
           .then(viewModules);
         self.moduleName = "";
       };
 
-      self.editModule = function(module){
+      self.updateModule = function(module){
         self.editMode = false;
         CourseModulesService.updateModule(module)
           .then(viewModules);
@@ -32,7 +33,7 @@ angular
 
       var requestModules = function() {
         return CourseModulesService.getModules(self.courseID);
-      }
+      };
 
       var resetModules = function(){
         self.modules = [];
