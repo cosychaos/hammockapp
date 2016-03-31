@@ -229,6 +229,11 @@ li {
   color: #0A3C5C;
  }
 
+.add-to-enrolled{
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
 .glyph-big {
   font-size: 2em;
   color: #0A3C5C;
