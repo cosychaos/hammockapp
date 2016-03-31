@@ -15,7 +15,9 @@ In order to complete this challenge, we used [Trello] (trello.com/hammockapp) to
 
 **Future challenges**
 
-As it turns out, two weeks is quite a short period of time for a project like Hammock. Our Minimum Viable Product is almost up and running, but in the future we would like to expand and improve it, and maybe make it a mobile app.  
+As it turns out, two weeks is quite a short period of time for a project like Hammock. Our Minimum Viable Product is almost up and running, but in the future we would like to expand and improve it, and maybe make it a mobile app. We would like for it to support social interaction, and allow users to discuss with other users taking similar courses, and maybe allow them to share and like activity. We are also looking at integrating with Google Calendar to make planning your study time easier, as well as note-taking functionality to make it easier to collect material, thoughts and ideas. 
+
+At the moment, we are using data from Coursera, EdX and Udacity, but we are looking to expand to other providers (Khan Academy, FutureLearn, etc.), and we would also like to build a webscraper in order to collect data that would be more relevant for Hammock users than the data provided by APIs, which are not always open.
 
 ##Setup
 
@@ -67,8 +69,5 @@ Please note that you may have to run the following commands if you encounter err
 
 Yet to come! 
 
-##User Stories
-
-To be added!
 Team:
 [Ina Tsetsova](https://github.com/tsetsova), [Joe Wroe](https://github.com/JoeWroe), [Marion LV](https://github.com/marion-lv) & [Vicky Gray](https://github.com/vickymg)
