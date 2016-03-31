@@ -323,6 +323,10 @@ li.editing .edit {
   margin-right: 15px;
 }
 
+.module-buttons {
+  margin-top:25px;
+}
+
 .search-buttons {
   margin-top: 30px;
 }
