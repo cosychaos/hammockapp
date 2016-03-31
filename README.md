@@ -70,4 +70,4 @@ Please note that you may have to run the following commands if you encounter err
 Yet to come! 
 
 Team:
-[Ina Tsetsova](https://github.com/tsetsova), [Joe Wroe](https://github.com/JoeWroe), [Marion LV](https://github.com/marion-lv) & [Vicky Gray](https://github.com/vickymg)
+[Emma Baddeley](https://github.com/esbaddeley), [Ina Tsetsova](https://github.com/tsetsova), [Marion LV](https://github.com/marion-lv) & [Mo Deerow](https://github.com/mdee123)
