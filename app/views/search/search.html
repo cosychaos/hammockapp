@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="col-lg-6 col-md-offset-3">
+  <div class="col-lg-8 col-md-offset-2">
     <form class="input-group" ng-submit="search.viewCourses()">
       <input id="search"
              ng-model="search.searchTerm"
@@ -20,23 +20,38 @@
             <img ng-src="{{result.image}}" class="thumbnail course-image"/>
           </div>
           <div class="col-md-7 col-s-5 col-xs-5">
-            <a ng-href="{{result.url}}" class="result-name">
-              {{result.name}}
+            <a ng-href="{{result.url}}">
+              <h3 class="result-name">{{result.name}}</h3>
             </a>
-            <p class="result-provider">
-              {{result.provider}}
+            <p>
+              <h4 class="result-provider">{{result.provider}}</h4>
             </p>
+            <h5 class="result-description">
+              {{result.description.substring(0, 300);}}...
+            </h5>
           </div>
-          <div class="col-md-2 col-s-2 col-xs-2">
+          <div class="col-md-1 col-s-2 col-xs-2 search-buttons">
             <a ng-click="create.addCourse({id: result.id})">
-              <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty" ng-class="myVar"></span>
+              <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty glyph-big" ng-class="myVar"></span>
             </a>
-            <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default">
+            <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default btn-success-small">
               Enroll
             </button>
           </div>
         </div>
       </li>
     </ul>
+    <div ng-show="search.searchMode">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-lg-4 col-lg-offset-2">
+            <h4>Can't find the course you're looking for?</h4>
+          </div>
+          <div class="col-lg-4">
+            <button id="submit" type="submit" class="btn btn-success-small">Add course</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
