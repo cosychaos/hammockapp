@@ -68,18 +68,18 @@ li {
 }
 
 .animate-show {
-    -webkit-transition: all linear 0.5s;
-    transition: all linear 0.5s;
-    opacity: 1;
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+  opacity: 1;
 }
 
 .animate-show.ng-hide-add,
 .animate-show.ng-hide-remove {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 .animate-show.ng-hide {
-    opacity: 0;
+  opacity: 0;
 }
 
 .buttons {
@@ -96,11 +96,15 @@ li {
   margin-top: 10px;
 }
 
-.btn-success-small {
-  background-color: #1cca97;
-  color: #EDFAF6;
+.btn-default{
   font-size: 18px;
+  min-width: 100px;
+  margin-top: 10px;
   font-family: 'Titillium Web', sans-serif;
+}
+
+.btn-green-small {
+  font-size: 18px;
   min-width: 100px;
   margin-top: 10px;
 }
@@ -115,6 +119,16 @@ li {
   font-weight: bold;
 }
 
+.btn-green-small:hover,
+.btn-green-small:active,
+.btn-green-small:active:hover,
+.btn-green-small.active:hover,
+.btn-green-small:active:focus{
+  background-color: #1cca97;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .container-box {
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: 22%;
@@ -122,7 +136,7 @@ li {
 }
 
 .course-buttons {
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .course-header {
@@ -132,7 +146,7 @@ li {
 
 .course-image {
   max-width:220px;
-  max-height: 240px;
+  max-height: 200px;
   margin-top: 20px;
 }
 
@@ -228,15 +242,21 @@ li {
   margin-bottom: 30px;
 }
 
-.glyph-big {
-  font-size: 2em;
+.glyph-bigger {
+  font-size: 1.2em;
   color: #0A3C5C;
 }
 
-.glyph-bigger {
-  font-size: 1.3em;
-  color: #1cca97;
-  margin-top: 22px;
+.glyph-big {
+  font-size: 2em;
+  color: #0A3C5C;
+  margin-top: 20px;
+}
+
+.glyph-success {
+  font-size: 2em;
+  color: #1cca97;  
+  margin-top: 20px;
 }
 
 .glyph-white {
@@ -253,7 +273,7 @@ li {
 }
 
 .chevron {
-  padding-top: 30px;
+  padding-top: 50px;
   font-size: 2em;
 }
 
@@ -297,10 +317,14 @@ li.editing .edit {
 }
 
 .my-course-image {
-  margin-top: 35px;
+  margin-top: 20px;
   max-width: 100px;
-  max-height: 100px;
+  max-height: 80px;
   margin-right: 15px;
+}
+
+.module-buttons {
+  margin-top:25px;
 }
 
 .search-buttons {
