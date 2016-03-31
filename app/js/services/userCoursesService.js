@@ -41,6 +41,17 @@
           });
       };
 
+      self.deleteCourse = function(course){
+        var data = JSON.stringify({course: course});
+        return $http({
+          url: apiEndPoint + "/" + course.id,
+          method: 'DELETE',
+          data: data,
+          headers: {'Content-Type': 'application/json'}
+        }).then(function(response){
+          return response;
+        });
+      };
   });
 
 

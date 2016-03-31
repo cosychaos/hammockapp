@@ -3,13 +3,15 @@ describe('UserCoursesCtrl', function(){
 	var ctrl, MockUserCoursesService, scope;
 
 	beforeEach (function(){
-		MockUserCoursesService = jasmine.createSpyObj('UserCoursesService', ['getMyCourses', 'addToMyCourses', 'updateCourse']);
+		MockUserCoursesService = jasmine.createSpyObj('UserCoursesService', ['getMyCourses', 'addToMyCourses', 'updateCourse', 'deleteCourse']);
 		module('Hammock', {UserCoursesService: MockUserCoursesService});
 	});
 
   beforeEach(function() {
   	inject(function($controller, $rootScope, $q){
 			MockUserCoursesService.getMyCourses.and.returnValue($q.when(courses));
+			MockUserCoursesService.updateCourse.and.returnValue($q.when(courses));
+			MockUserCoursesService.deleteCourse.and.returnValue($q.when(courses));
     	ctrl = $controller('UserCoursesCtrl');
 			scope = $rootScope;
     });
@@ -67,11 +69,45 @@ describe('UserCoursesCtrl', function(){
 
 	});
 
+	describe ('#deleteCourse', function(){
+
+		beforeEach(inject(function($httpBackend){
+			httpBackend = $httpBackend;
+			httpBackend.expectGET("views/main.html").respond("fine");
+		}));
+
+		it ("passes the request to the userCoursesService", function(){
+			ctrl.deleteCourse(courseToDelete);
+			scope.$apply();
+			expect(MockUserCoursesService.deleteCourse).toHaveBeenCalled();
+		});
+
+		it ("deletes the course", function(){
+			scope.$apply();
+			expect(ctrl.courses[0].length).toBe(1);
+			inject(function($q){
+				MockUserCoursesService.getMyCourses.and.returnValue($q.when(deletedCourses), function(){
+					ctrl.deleteCourse(courseToDelete);
+					scope.$apply();
+					expect(ctrl.courses[0].length).toBe(0);
+				});
+			});
+		});
+
+
+
+
+	});
+
 
 	var courseToUpdate = {
                 "id": "1",
                 "status": "completed"
               	};
+
+	var courseToDelete = {
+							"id": "1"
+							};
 
 	var courses = [{
 		"name": "The joy of physics",
@@ -106,4 +142,18 @@ var updatedCourses = [{
 		"status": "complete",
 		"id": "3"
 	}];
+
+var deletedCourses = [{
+			"name": "The joy of maths",
+			"provider": "Udacity",
+			"status": "in progress",
+			"id": "2"
+			},{
+			"name": "The joy of programming",
+			"provider": "Coursera",
+			"status": "complete",
+			"id": "3"
+		}];
+
+
 });
