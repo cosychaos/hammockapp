@@ -1,24 +1,21 @@
 <div class="container-fluid">
-<!-- 	<ul class="nav nav-pills">
-	  <li role="presentation"><a href="#/mycourses" id="my-courses" class="course-tabs">My Courses</a></li>
-	  <li role="presentation"><a href="#/search" id="add-courses" class="course-tabs">Add Courses</a></li>
-	</ul> -->
-	<div class="row">
 		<div id="interested" class="col-xs-12 col-md-4 text-center course-header">
-			<h3>Interesting Courses</h3>
+				<h3 class="header">Interesting Courses</h3>
 				<ul>
-					<li class="interested well" ng-repeat="course in userCoursesCtrl.courses[0]">
+					<li class="current well" ng-repeat="course in userCoursesCtrl.courses[0]">
 						<div class="row">
-							<div class="col-md-3 col-s-4 col-xs-4">
+							<div class="col-md-3 col-s-4 col-xs-5">
 							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
 							</div>
-						<div class="col-md-7 col-s-5 col-xs-4">
-							<a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
-							<h5 class="course-provider">{{course.provider}}</h5>
-						</div>
-							<div class="col-md-2 col-s-3 col-xs-4 update-course">
+							<div class="col-md-6 col-s-6 col-xs-5">
+								 <a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
+								 <h5 class="course-provider">{{course.provider}}</h5>
+							</div>
+							<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
 								<a ng-click="userCoursesCtrl.deleteCourse({id: course.id})" class="delete"><span class="glyphicon glyphicon-trash glyph-bigger"></span></a>
-								<a class="update-course" id="start-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="glyphicon glyphicon-ok glyph-bigger"></span></a>
+							</div>
+							<div class="col-md-1">
+								<a class="update-course pull-right" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-right glyph-bigger"></span></a>
 							</div>
 						</div>
 					</li>
@@ -26,29 +23,55 @@
 			</div>
 
 			<div id="current" class="col-xs-12 col-md-4 text-center course-header">
-				<h3>Current Courses</h3>
+				<h3 class="header">Current Courses</h3>
 				<ul>
 					<li class="current well-green well" ng-repeat="course in userCoursesCtrl.courses[1]">
 						<div class="row">
+						<div class="col-md-1">
+								<a class="update-course pull-left" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'interested'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-left glyph-bigger glyph-white"></span></a>
+							</div>
 							<div class="col-md-3 col-s-4 col-xs-5">
 							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
 							</div>
-							<div class="col-md-7 col-s-6 col-xs-5">
-								 <a ng-href="{{course.url}}" class="course-name-current"><h4>{{course.name}}</h4></a>
-								 <h5 class="course-provider-current">{{course.provider}}</h5>
+							<div class="col-md-5 col-s-6 col-xs-5">
+								 <a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
+								 <h5 class="course-provider text-light">{{course.provider}}</h5>
 							</div>
 							<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
-								<a ng-click="userCoursesCtrl.deleteCourse({id: course.id})" class="delete"><span class="glyphicon glyphicon-trash glyph-bigger-white"></span></a>
-								<a href="#/mycourses/{{course.id}}/modules" id="plan"><span class="glyphicon glyphicon-th-list glyph-bigger-white"></span></a>
-								<a class="update-course" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="glyphicon glyphicon-ok glyph-bigger-white"></span></a>
+								<a ng-click="userCoursesCtrl.deleteCourse({id: course.id})" class="delete"><span class="glyphicon glyphicon-trash glyph-bigger glyph-white"></span></a>
+								<a href="#/mycourses/{{course.id}}/modules" id="plan"><span class="glyphicon glyphicon-th-list glyph-bigger glyph-white"></span></a>
+							</div>
+							<div class="col-md-1">
+								<a class="update-course pull-right" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'complete'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-right glyph-bigger glyph-white"></span></a>
 							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
-
 			<div id="completed" class="col-xs-12 col-md-4 text-center course-header">
-			<h3>Completed Courses</h3>
+					<h3 class="header">Completed Courses</h3>
+					<ul>
+						<li class="current well" ng-repeat="course in userCoursesCtrl.courses[2]">
+							<div class="row">
+								<div class="col-md-1">
+									<a class="update-course pull-right" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-left glyph-bigger"></span></a>
+								</div>
+								<div class="col-md-3 col-s-4 col-xs-5">
+								 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
+								</div>
+								<div class="col-md-6 col-s-6 col-xs-5">
+									 <a ng-href="{{course.url}}" class="course-name"><h4>{{course.name}}</h4></a>
+									 <h5 class="course-provider">{{course.provider}}</h5>
+								</div>
+								<div class="col-md-2 col-s-2 col-xs-2 course-buttons">
+									<a ng-click="userCoursesCtrl.deleteCourse({id: course.id})" class="delete"><span class="glyphicon glyphicon-trash glyph-bigger"></span></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+		<!-- div id="completed" class="col-xs-12 col-md-4 text-center course-header">
+			<h3 class="header">Completed Courses</h3>
 				<ul>
 					<li class="completed well" ng-repeat="course in userCoursesCtrl.courses[2]">
 						<div class="row">
@@ -65,7 +88,7 @@
 						</div>
 					</li>
 				</ul>
-		</div>
+		</div> -->
 </div>
 
 </div>
