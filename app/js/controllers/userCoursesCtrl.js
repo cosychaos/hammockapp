@@ -9,6 +9,10 @@ angular
 
     self.updateCourse = function(courseToUpdate){
       UserCoursesService.updateCourse(courseToUpdate).then(viewCourses);
+      };
+
+    self.deleteCourse = function(courseToDelete) {
+      UserCoursesService.deleteCourse(courseToDelete).then(viewCourses);
     };
 
     var requestCourses = function() {

@@ -48,6 +48,7 @@ li {
   margin-left: 30px;
   margin-bottom: 15px;
 }
+
 #module-input{
   margin-top: 20px;
 }
@@ -76,6 +77,7 @@ li {
 .animate-show.ng-hide-remove {
     display: inline-block !important;
 }
+
 .animate-show.ng-hide {
     opacity: 0;
 }
@@ -93,6 +95,7 @@ li {
   min-width: 300px;
   margin-top: 10px;
 }
+
 .btn-success-small {
   background-color: #1cca97;
   color: #EDFAF6;
@@ -101,6 +104,7 @@ li {
   min-width: 100px;
   margin-top: 10px;
 }
+
 .btn-success:hover,
 .btn-success:active,
 .btn-success:active:hover,
@@ -127,8 +131,8 @@ li {
 }
 
 .course-image {
-  max-width:250px;
-  max-height: 250px;
+  max-width:220px;
+  max-height: 240px;
   margin-top: 20px;
 }
 
@@ -146,6 +150,7 @@ li {
   font-family: 'Titillium Web', sans-serif;
   padding: 0px 5px 0px 5px;
 }
+
 .course-name-current:hover {
   color:#00976b;
 }
@@ -224,11 +229,15 @@ li {
   color: #0A3C5C;
  }
 
+.add-to-enrolled{
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
 .glyph-big {
   font-size: 2em;
   color: #0A3C5C;
 }
-
 
 .glyph-bigger {
   font-size: 1.3em;
@@ -249,6 +258,10 @@ li {
 .glyph-active {
   color: #1cca97;
   font-size:2.2em
+}
+
+.header {
+  margin-bottom: 20px;
 }
 
 li:last-child {
@@ -274,6 +287,9 @@ li.editing .edit {
   margin: 0;
 }
 
+.margin-top-20 {
+  margin-top: 20px;
+}
 .navbar {
   margin-bottom: 0;
 }
@@ -294,7 +310,7 @@ li.editing .edit {
   margin-top: 30px;
 }
 
-.result-description, .result-provider, .result-name  {
+.result-description, .result-provider, .result-name {
   padding-left:15px;
   padding-right:15px;
 }
@@ -303,8 +319,3 @@ li.editing .edit {
   background-color: #1cca97;
 }
 
-.thumbnail {
-  margin-top: 25px;
-  max-height: 80px;
-  max-width: 90px;
-}

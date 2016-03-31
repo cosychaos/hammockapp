@@ -1,54 +1,61 @@
 <div class="container-fluid">
   <div class="col-lg-8 col-md-offset-2">
-    <form class="input-group" ng-submit="search.viewCourses()">
-      <input id="search"
-             ng-model="search.searchTerm"
-             type="text"
-             autofocus="autofocus"
-             class="form-control"
-             placeholder="Search for courses...">
-      <span class="input-group-btn">
-        <button id="search-button" class="btn btn-default" type="button" ng-click="search.viewCourses()">
-          Go!
-        </button>
-      </span>
-    </form>
-    <ul id="result" ng-controller="CreateCourseCtrl as create">
-      <li class="well m-t-10" ng-repeat="result in search.results | filter:search.searchTerm">
-        <div class="row">
-          <div class="col-md-3 col-s-5 col-xs-8">
-            <img ng-src="{{result.image}}" class="thumbnail course-image"/>
-          </div>
-          <div class="col-md-7 col-s-5 col-xs-5">
-            <a ng-href="{{result.url}}">
-              <h3 class="result-name">{{result.name}}</h3>
-            </a>
-            <p>
-              <h4 class="result-provider">{{result.provider}}</h4>
-            </p>
-            <h5 class="result-description">
-              {{result.description.substring(0, 300);}}...
-            </h5>
-          </div>
-          <div class="col-md-1 col-s-2 col-xs-2 search-buttons">
-            <a ng-click="create.addCourse({id: result.id})">
-              <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty glyph-big" ng-class="myVar"></span>
-            </a>
-            <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default btn-success-small">
-              Enroll
-            </button>
-          </div>
+    <form class="form-group" ng-submit="search.viewCourses()">
+      <h3 class="text-center">Search our course catalogue:</h3>
+      <div class="row">
+        <div class="col-lg-6 col-md-offset-3">
+          <input id="search"
+                 ng-model="search.searchTerm"
+                 type="text"
+                 autofocus="autofocus"
+                 class="form-control"
+                 placeholder="Search for courses...">
         </div>
-      </li>
-    </ul>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-lg-10 col-md-offset-1">
+        <ul id="result" ng-controller="CreateCourseCtrl as create">
+        <li class="well m-t-10" ng-repeat="result in search.results | filter:search.searchTerm">
+          <div class="row">
+            <div class="col-md-3 col-s-5 col-xs-8">
+              <img ng-src="{{result.image}}" class="course-image thumbnail"/>
+            </div>
+            <div class="col-md-7 col-s-5 col-xs-5">
+              <a ng-href="{{result.url}}">
+                <h3 class="result-name">{{result.name}}</h3>
+              </a>
+              <p>
+                <h4 class="result-provider">{{result.provider}}</h4>
+              </p>
+              <h5 class="result-description">
+                {{result.description.substring(0, 300);}}...
+              </h5>
+            </div>
+            <div class="col-md-1 col-s-2 col-xs-2 search-buttons">
+              <a ng-click="create.addCourse({id: result.id})">
+                <span ng-click="myVar='glyph-active'" class="glyphicon glyphicon-star-empty glyph-big" ng-class="myVar"></span>
+              </a>
+              <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default btn-success-small">
+                Enroll
+              </button>
+            </div>
+          </div>
+        </li>
+        <div ng-hide="search.searchMode">
+          <h5 class="text-center">Or add your own course <a href="#/newcourse">here</a></h5>
+        </div>
+        </ul>
+      </div>
+    </div>
     <div ng-show="search.searchMode">
       <div class="row">
         <div class="col-lg-12">
-          <div class="col-lg-4 col-lg-offset-2">
+          <div class="text-center">
             <h4>Can't find the course you're looking for?</h4>
           </div>
-          <div class="col-lg-4">
-            <button id="submit" type="submit" class="btn btn-success-small">Add course</button>
+          <div class="text-center">
+            <a href="#/newcourse"id="submit" type="submit" class="btn btn-success-small">Add course</a>
           </div>
         </div>
       </div>
