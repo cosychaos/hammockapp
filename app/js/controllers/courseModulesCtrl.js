@@ -11,9 +11,7 @@ angular
       self.modules=[];
 
       self.addNewModule = function() {
-        var module = {
-          title: self.moduleName,
-          complete: false}
+        var module = {title: self.moduleName, complete: false};
         CourseModulesService.createModule(module, self.courseID)
           .then(viewModules);
         self.moduleName = "";
@@ -32,10 +30,6 @@ angular
 
       var requestModules = function() {
         return CourseModulesService.getModules(self.courseID);
-      }
-
-      var resetModules = function(){
-        self.modules = [];
       };
 
       var viewModules = function() {

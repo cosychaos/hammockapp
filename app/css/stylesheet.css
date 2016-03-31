@@ -336,6 +336,9 @@ li.editing .edit {
   padding-right:15px;
 }
 
+.to-do{
+  margin-top: 20px;
+}
 .well-green {
   background-color: #1cca97;
 }
