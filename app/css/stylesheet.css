@@ -19,7 +19,7 @@ h1 {
   font-size: 70px;
 }
 
-h3 {
+h3, h4, h5 {
   font-family: 'Titillium Web', sans-serif;
   color: #0A3C5C;
 }
@@ -57,6 +57,11 @@ li {
   margin-top:10px;
 }
 
+#search {
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
 #start-course {
   margin-top: 30%;
 }
@@ -71,6 +76,7 @@ li {
 .animate-show.ng-hide-remove {
     display: inline-block !important;
 }
+
 .animate-show.ng-hide {
     opacity: 0;
 }
@@ -97,6 +103,7 @@ li {
   min-width: 100px;
   margin-top: 10px;
 }
+
 .btn-success:hover,
 .btn-success:active,
 .btn-success:active:hover,
@@ -123,8 +130,9 @@ li {
 }
 
 .course-image {
-  width:80%;
-  height: 80%;
+  max-width:250px;
+  max-height: 250px;
+  margin-top: 20px;
 }
 
 .course-name {
@@ -219,12 +227,11 @@ li {
   color: #0A3C5C;
  }
 
-.my-course-image {
-  margin-top: 15%;
-  max-width: 100px;
-  max-height: 80px;
-  margin-right: 15px;
+.glyph-big {
+  font-size: 2em;
+  color: #0A3C5C;
 }
+
 
 .glyph-bigger {
   font-size: 1.3em;
@@ -244,7 +251,7 @@ li {
 
 .glyph-active {
   color: #1cca97;
-  font-size:1.5em
+  font-size:2.2em
 }
 
 li:last-child {
@@ -254,6 +261,7 @@ li:last-child {
 li .edit {
     display: none;
 }
+
 li.editing {
   border-bottom: 1px solid #778899;
 }
@@ -279,6 +287,22 @@ li.editing .edit {
 .navbar-item {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.my-course-image {
+  margin-top: 15%;
+  max-width: 100px;
+  max-height: 80px;
+  margin-right: 15px;
+}
+
+.search-buttons {
+  margin-top: 30px;
+}
+
+.result-description, .result-provider, .result-name  {
+  padding-left:15px;
+  padding-right:15px;
 }
 
 .well-green {
