@@ -33,24 +33,20 @@
               </h5>
             </div>
             <div class="col-md-1 col-s-2 col-xs-2 search-buttons" ng-controller="UserCoursesCtrl as course">
-              <a ng-hide="result.cloned_status == 'interested'" ng-click="create.addCourse({id: result.id})">
-                <span ng-click="result.cloned_status = 'interested'" class="glyphicon glyphicon-star-empty glyph-big" ng-class="displayClass"></span>
+              <a ng-click="create.addCourse({id: result.id});result.cloned_status = 'interested'" ng-hide="result.cloned_status == 'interested'">
+                <span class="glyphicon glyphicon-star-empty glyph-big" ng-class="displayClass"></span>
               </a>
-              <a ng-show="result.cloned_status == 'interested'" ng-click="course.deleteCourse({id: result.clone_id})">
-                <span ng-click="result.cloned_status = ''" class="glyphicon glyphicon-star-empty glyph-success" ng-class="myVar"></span>
+              <a ng-click="course.deleteCourse({id: result.clone_id}); result.cloned_status = ''" ng-show="result.cloned_status == 'interested'">
+                <span class="glyphicon glyphicon-star-empty glyph-success" ng-class="myVar"></span>
               </a>
               <div ng-hide="result.cloned_status == 'in progress'">
-                  <button ng-click="create.addCourse({id: result.id, status:'in progress'})" class="btn btn-default btn-green-small btn-success">
-                    <span ng-click="result.cloned_status = 'in progress'">
-                      Enroll
-                    </span>
+                  <button ng-click="create.addCourse({id: result.id, status:'in progress'}); result.cloned_status = 'in progress'" class="btn btn-default btn-green-small btn-success">
+                    Enroll
                   </button>
               </div>
-              <div ng-show="result.cloned_status == 'in progress'" ng-click="course.deleteCourse({id: result.clone_id})">
-                <button ng-click="create.deleteCourse(result)" class="btn btn-default">
-                  <span ng-click="result.cloned_status = ''">
-                    Enrolled
-                  </span>
+              <div ng-show="result.cloned_status == 'in progress'">
+                <button ng-click="course.deleteCourse({id: result.clone_id}); result.cloned_status = ''" class="btn btn-default">
+                  Enrolled
                 </button>
               </div>
             </div>
