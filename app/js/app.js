@@ -61,6 +61,9 @@
  		$rootScope.$on('auth:login-success', function() {
     	$location.path('/mycourses');
   	});
+    $rootScope.$on('newCourseCreated', function() {
+      $location.path('/mycourses');
+    });
 	}]);
 
 }());
