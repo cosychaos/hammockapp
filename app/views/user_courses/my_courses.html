@@ -2,7 +2,7 @@
 		<div id="interested" class="col-xs-12 col-md-4 text-center course-header">
 				<h3 class="header">Interesting Courses</h3>
 				<ul>
-					<li class="current well" ng-repeat="course in userCoursesCtrl.courses[0]">
+					<li class="current well" ng-repeat="course in userCoursesCtrl.courses | filter:{status: 'interested'}">
 						<div class="row">
 							<div class="col-md-3 col-s-4 col-xs-5">
 							 	<img ng-src="{{course.image}}" class="thumbnail my-course-image"/>
@@ -25,7 +25,7 @@
 			<div id="current" class="col-xs-12 col-md-4 text-center course-header">
 				<h3 class="header">Current Courses</h3>
 				<ul>
-					<li class="current well-green well" ng-repeat="course in userCoursesCtrl.courses[1]">
+					<li class="current well-green well" ng-repeat="course in userCoursesCtrl.courses | filter:{status: 'in progress'}">
 						<div class="row">
 						<div class="col-md-1">
 								<a class="update-course pull-left" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'interested'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-left glyph-bigger glyph-white"></span></a>
@@ -51,7 +51,7 @@
 			<div id="completed" class="col-xs-12 col-md-4 text-center course-header">
 					<h3 class="header">Completed Courses</h3>
 					<ul>
-						<li class="current well" ng-repeat="course in userCoursesCtrl.courses[2]">
+						<li class="current well" ng-repeat="course in userCoursesCtrl.courses | filter:{status: 'complete'}">
 							<div class="row">
 								<div class="col-md-1">
 									<a class="update-course pull-right" id="complete-course" ng-click="userCoursesCtrl.updateCourse({id: course.id, status: 'in progress'})" href="#/mycourses"><span class="chevron glyphicon glyphicon-chevron-left glyph-bigger"></span></a>

@@ -3,7 +3,7 @@ angular
   .module('Hammock')
   .controller('SearchCtrl', ['SearchService', function(SearchService) {
     var self = this;
-    self.searchMode = false;
+    self.searchMode;
     self.results = [];
 
     var requestCourses = SearchService.getSearchResults();
@@ -14,9 +14,8 @@ angular
 
     self.viewCourses = function() {
       requestCourses.then(function(response){
-        var courseResults = Array.from(response);
         self.searchMode = true;
-        self.results = courseResults.filter(self.matchesSearchTerm);
+        self.results = response.filter(self.matchesSearchTerm);
        });
     };
- }]);
+ }]); 

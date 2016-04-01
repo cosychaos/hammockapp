@@ -10,7 +10,10 @@ angular
     };
 
     self.createCourse = function(){
-     	var course = {name: self.courseName, url:self.courseUrl, image:self.imageUrl, status:'in progress'};
+     	var course = {name: self.courseName, 
+                    url:self.courseUrl, 
+                    image:self.imageUrl, 
+                    status:'in progress'};
       self.addCourse(course);
     };
 }]);
