@@ -3,12 +3,13 @@
 
 angular
   .module('Hammock')
-  .controller('CourseModulesCtrl', ['$routeParams','CourseModulesService', '$timeout', function ($routeParams, CourseModulesService, $timeout) {
+  .controller('CourseModulesCtrl', ['$routeParams','CourseModulesService', 'UserCoursesService', '$timeout', function ($routeParams, CourseModulesService, UserCoursesService, $timeout) {
       var self = this;
       var editMode = false;
 
       self.courseID = $routeParams.ID;
       self.modules=[];
+      self.course;
 
       self.addNewModule = function() {
         var module = {title: self.moduleName, complete: false};
@@ -16,6 +17,12 @@ angular
           .then(viewModules);
         self.moduleName = "";
       };
+
+      self.getCourse = function() {
+        return UserCoursesService.showCourse(self.courseID)
+        .then(function(course) {
+          self.course = course});
+      }
 
       self.editModule = function(module){
         self.editMode = false;
@@ -35,6 +42,7 @@ angular
       var viewModules = function() {
         requestModules().then(function(modules){
           self.modules = modules;
+          self.getCourse();
         });
       };
 
@@ -47,5 +55,4 @@ angular
       };
 
       viewModules();
-
 }]);

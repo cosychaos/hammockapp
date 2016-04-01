@@ -17,6 +17,15 @@
         });
       };
 
+      self.showCourse = function(courseID){
+        return $http({
+          url:apiEndPoint + "/" + courseID,
+          method: 'GET'
+        }).then(function(response){
+          return response.data;
+        });
+      };
+
       self.addToMyCourses = function(course){
         var data = JSON.stringify({"course": course});
         return $http({
