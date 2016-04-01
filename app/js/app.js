@@ -38,7 +38,7 @@
       .when('/mycourses/:ID/modules', {
         templateUrl: 'views/modules/modules.html',
         controller:'CourseModulesCtrl',
-        controllerAs: 'course'
+        controllerAs: 'modulesCtrl'
       })
       .when('/search', {
         templateUrl: 'views/search/search.html',
@@ -61,6 +61,9 @@
  		$rootScope.$on('auth:login-success', function() {
     	$location.path('/mycourses');
   	});
+    $rootScope.$on('newCourseCreated', function() {
+      $location.path('/mycourses');
+    });
 	}]);
 
 }());

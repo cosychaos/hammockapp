@@ -36,11 +36,11 @@
                 <div class="col-md-10">
                   <h4 class="add-to-enrolled">Add to my enrolled courses?</h4>
                 </div>
-                <div class="check-box col-md-2">
+                <div class="col-md-2 col-s-2 col-xs-2 check-box">
                   <div class="checkbox-custom">
                     <form>
-                      <input type="checkbox" value="1" ng-model="" ng-click="" id="{{$index}}" />
-                      <label for="{{$index}}"></label>
+                      <input type="checkbox" ng-model= "create.courseStatus" ng-true-value="'in progress'" ng-false-value="'interested'" id="enrolled" />
+                      <label for="enrolled"></label>
                     </form>
                   </div>
                 </div>
