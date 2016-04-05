@@ -8,10 +8,6 @@ For our final project at [Makers Academy, a 12-week coding bootcamp in London](h
 ##Demo & Screenshots
 
 <p align="center">
-  <img src="http://i.imgur.com/44CFRzB.gif" alt="Hammock demo">
-</p>
-
-<p align="center">
   <img src="http://i.imgur.com/jFzOPaW.pngg" alt="My Courses Dashboard" width="250"/>
   <img src="http://i.imgur.com/RHIkiJM.pngg" alt="Course Search" width="250"/>
   <img src="http://i.imgur.com/Dk5ynhQ.png" alt="Add your own course" width="250"/>
