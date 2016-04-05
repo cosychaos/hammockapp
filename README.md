@@ -5,6 +5,21 @@
 
 For our final project at [Makers Academy, a 12-week coding bootcamp in London](http://www.makersacademy.com/), we decided to focus on making organising online studies easier. With thousands of online courses available, it can be difficult to keep track of interesting courses, courses that you're enrolled on and courses that you have completed. Hammock aims to make it easier for you to know what your schedule should look like by allowing you to select courses from providers such as Udacity, Coursera and EdX, add your own modules, and plan your study time with Google Calendar.
 
+##Demo & Screenshots
+
+<p align="center">
+  <img src="http://i.imgur.com/44CFRzB.gif" alt="Hammock demo">
+</p>
+
+<p align="center">
+  <img src="http://i.imgur.com/jFzOPaW.pngg" alt="My Courses Dashboard" width="250"/>
+  <img src="http://i.imgur.com/RHIkiJM.pngg" alt="Course Search" width="250"/>
+  <img src="http://i.imgur.com/Dk5ynhQ.png" alt="Add your own course" width="250"/>
+</p>
+
+
+This front end design was slightly altered for a presentation on a large screen to increase visibility.
+
 **Design**
 
 As this was our final project, we decided to push ourselves and test what we'd learnt on the course by consolidating and improving our knowledge of Ruby on Rails and Angular.JS. The backend and the frontend have been decoupled ([find the backend repository here](https://github.com/marion-lv/hammockapp_api)), not only so that we could play around with building APIs, but also so that we could keep a modular product that we could easily turn into a mobile app, amongst other things.
